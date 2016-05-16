@@ -1,0 +1,3 @@
+[submodule "webApp/src/main/webapp/resources/SBComp"]
+	path = webApp/src/main/webapp/resources/SBComp
+	url = https://github.com/salviof/SBComp.git

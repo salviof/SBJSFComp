@@ -30,6 +30,7 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class SiteMap extends MB_SiteMapa {
 
+    /// Injete aqui todas as Paginas que extendem o objeto MB_pagina
     @Inject
     private PgDemoComponente demoComponente;
     @Inject
@@ -37,7 +38,7 @@ public class SiteMap extends MB_SiteMapa {
     @Inject
     private PgPaginaInicial paginaInicial;
 
-    /// Injete aqui todas as Paginas que extendem o objeto MB_pagina
+    // Paginas do Sistema.
     @Override
     protected Map<String, ItfB_Pagina> buildPaginas() {
         Map<String, ItfB_Pagina> paginasSimples = buildSystemPages();
