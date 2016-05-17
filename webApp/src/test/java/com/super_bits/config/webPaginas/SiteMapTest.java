@@ -5,10 +5,11 @@
  */
 package com.super_bits.config.webPaginas;
 
+import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.acaoDeEntidade.AcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.B_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.util.testes.UtilTestePagina;
 import java.util.ArrayList;
@@ -33,13 +34,23 @@ public class SiteMapTest extends TesteJunit {
             SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
             SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebExemplo.HOMOLOGACAO.getConfiguracaoWebPaginas());
             SiteMap mapa = new SiteMap();
+
             List<ItfB_Pagina> paginas = new ArrayList();
             paginas.addAll(mapa.getPaginasOfflineEmLista());
             Map<String, ItfB_Pagina> paginasCadastradas = new HashMap<>();
 
+            AcaoGestaoEntidade testeXHTML = (AcaoGestaoEntidade) FabAcaoEditorDeComponentes.COMPONENTE_MB_GERENCIAR.getAcaoDoSistema();
+
+            String xhtmlTeste = testeXHTML.getXhtml();
+
+            mapa.getPaginaNoContexto(xhtmlTeste);
+
+            System.out.println(xhtmlTeste);
+
             for (ItfB_Pagina pagina : paginas) {
                 System.out.println("XHTML:::::" + pagina.getRecursoXHTML());
                 System.out.println("#### ADICIONANDO--->" + pagina.getNomeCurto() + "<---");
+
                 if (paginasCadastradas.get(pagina.getNomeCurto()) != null) {
                     throw new UnsupportedOperationException("A tag de atalho " + pagina.getNomeCurto() + " já foi usada em " + pagina.getClass().getSimpleName());
                 }
