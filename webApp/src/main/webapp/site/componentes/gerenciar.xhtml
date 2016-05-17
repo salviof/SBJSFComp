@@ -4,7 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
     <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
@@ -22,10 +26,49 @@
 
         <ui:define name="divConteudo">
             #{paginaAtual.infoPagina.acaoVinculada.nome}
+            #{paginaAtual.infoPagina.acaoVinculada.xhtml}
+
+            <h:form>
+                <p:messages autoUpdate="true" />
+                selecionado=   #{pgEditarComponente.campoSelecionado.caminhoCompletoString} -------Caminho Curto= #{pgEditarComponente.campoSelecionado.caminhoSemNomeClasse}<br/>
+                <p:selectOneMenu converter="conversorGenerico" value="#{pgEditarComponente.campoSelecionado}" >
+
+                    <f:selectItems value="#{pgEditarComponente.camposDisponiveis}" var="cp" itemValue="#{cp}"   />
+                </p:selectOneMenu>
+                <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                <p:commandButton value="teste" update="@form"/>
 
 
 
+            </h:form>
 
+            <p:panel header="Teste Campo Específico: #{pgDemoComponente.campoSelecionado}" >
+                <h:form >
+
+
+
+                    <SBComp:seletorItem lista="#{pgDemoComponente.beanExemplo.todosCamposInstanciados}" registro="#{pgDemoComponente.campoSelecionado}"  />
+
+
+
+                    <p:commandButton value="Alterar" action="#{pgDemoComponente.validacao()}"  oncomplete="javascript:location.reload();" />
+
+
+                </h:form>
+
+
+                <h:form id="testeCampo" >
+                    <p:panelGrid columns="2">
+                        <SBComp:input registro="#{pgDemoComponente.campoSelecionado}" tipoExibicaoCampo="#{pgDemoComponente.tipoVisualizacao}" diferencialID="#{pgDemoComponente.diferencialIDDinamico}"  />
+                        <p:commandButton  value="Validar Campos" update="@form" />
+                    </p:panelGrid>
+
+
+                </h:form>
+
+
+
+            </p:panel>
             teste
 
 

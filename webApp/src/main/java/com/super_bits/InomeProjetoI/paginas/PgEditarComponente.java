@@ -9,6 +9,8 @@ import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.InfoAcaoEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.bean.BeanExemplo;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.ArrayList;
@@ -27,7 +29,10 @@ import javax.inject.Named;
 public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     private List<String> componentesExistentes;
-    private String componenteSelecionado;
+
+    private CaminhoCampoReflexao campoSelecionado;
+    private List<CaminhoCampoReflexao> camposDisponiveis;
+    private final BeanExemplo beanExemplo = new BeanExemplo();
 
     public PgEditarComponente() {
         super(new AcaoDoSistema[]{
@@ -38,6 +43,7 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
                 FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoEntidadeFormulario(),
                 null,
                 false, true, true, true, false);
+        camposDisponiveis = beanExemplo.getCaminhoCampoNivel1();
     }
 
     public List<String> getComponentesExistentes() {
@@ -46,14 +52,6 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     public void setComponentesExistentes(List<String> componentesExistentes) {
         this.componentesExistentes = componentesExistentes;
-    }
-
-    public String getComponenteSelecionado() {
-        return componenteSelecionado;
-    }
-
-    public void setComponenteSelecionado(String componenteSelecionado) {
-        this.componenteSelecionado = componenteSelecionado;
     }
 
     @Override
@@ -67,6 +65,22 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
         comp1.setNome("Componente Endereço");
         comp1.setXhtml("Componente Endereço");
 
+    }
+
+    public CaminhoCampoReflexao getCampoSelecionado() {
+        return campoSelecionado;
+    }
+
+    public void setCampoSelecionado(CaminhoCampoReflexao campoSelecionado) {
+        this.campoSelecionado = campoSelecionado;
+    }
+
+    public List<CaminhoCampoReflexao> getCamposDisponiveis() {
+        return camposDisponiveis;
+    }
+
+    public BeanExemplo getBeanExemplo() {
+        return beanExemplo;
     }
 
 }
