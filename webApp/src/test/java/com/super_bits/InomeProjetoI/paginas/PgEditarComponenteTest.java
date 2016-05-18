@@ -26,6 +26,9 @@ public class PgEditarComponenteTest extends TesteJunit {
         for (CaminhoCampoReflexao caminho : pagina.getCamposDisponiveis()) {
             System.out.println("Caminho Completo:" + caminho.getCaminhoCompletoString());
             System.out.println("Caminho parcial:" + caminho.getCaminhoSemNomeClasse());
+            System.out.println("String" + caminho.toString());
+            System.out.println("ID:" + caminho.getId());
+            System.out.println(caminho.getNomeCurto());
         }
 
     }

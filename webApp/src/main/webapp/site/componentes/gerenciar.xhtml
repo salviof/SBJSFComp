@@ -25,51 +25,118 @@
         </ui:define>
 
         <ui:define name="divConteudo">
-            #{paginaAtual.infoPagina.acaoVinculada.nome}
-            #{paginaAtual.infoPagina.acaoVinculada.xhtml}
+            <h:panelGroup id="exbicaoDeComponentes">
 
-            <h:form>
-                <p:messages autoUpdate="true" />
-                selecionado=   #{pgEditarComponente.campoSelecionado.caminhoCompletoString} -------Caminho Curto= #{pgEditarComponente.campoSelecionado.caminhoSemNomeClasse}<br/>
-                <p:selectOneMenu converter="conversorGenerico" value="#{pgEditarComponente.campoSelecionado}" >
-
-                    <f:selectItems value="#{pgEditarComponente.camposDisponiveis}" var="cp" itemValue="#{cp}"   />
-                </p:selectOneMenu>
-                <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-                <p:commandButton value="teste" update="@form"/>
+                <h:form>
 
 
 
-            </h:form>
-
-            <p:panel header="Teste Campo Específico: #{pgDemoComponente.campoSelecionado}" >
-                <h:form >
-
-
-
-                    <SBComp:seletorItem lista="#{pgDemoComponente.beanExemplo.todosCamposInstanciados}" registro="#{pgDemoComponente.campoSelecionado}"  />
-
-
-
-                    <p:commandButton value="Alterar" action="#{pgDemoComponente.validacao()}"  oncomplete="javascript:location.reload();" />
-
-
-                </h:form>
-
-
-                <h:form id="testeCampo" >
                     <p:panelGrid columns="2">
-                        <SBComp:input registro="#{pgDemoComponente.campoSelecionado}" tipoExibicaoCampo="#{pgDemoComponente.tipoVisualizacao}" diferencialID="#{pgDemoComponente.diferencialIDDinamico}"  />
-                        <p:commandButton  value="Validar Campos" update="@form" />
+                        <p:selectOneMenu converter="conversorGenerico"
+                                         value="#{pgEditarComponente.campoSelecionado}" >
+                            <f:selectItems value="#{pgEditarComponente.camposDisponiveis}" var="cp" itemValue="#{cp}"   />
+                        </p:selectOneMenu>
+                        <p:commandButton value="ALTERAR CAMPO INPUT" update="@form"  oncomplete="javascript:location.reload();"/>
                     </p:panelGrid>
 
-
                 </h:form>
 
 
 
-            </p:panel>
-            teste
+                <p:panel  >
+                    <h:form>
+                        <p:panelGrid columns="2">
+                            <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelSuperior}"
+                                           registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                            <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
+                        </p:panelGrid>
+                    </h:form>
+
+
+
+                    <h:form>
+                        <p:panelGrid columns="2">
+                            <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.resumido}"
+                                           registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                            <p:commandButton value="Validar" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
+                        </p:panelGrid>
+
+                    </h:form>
+
+                    <h:form>
+                        <p:panelGrid columns="2">
+                            <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelEsquerda}"
+                                           registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                            <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
+                        </p:panelGrid>
+                    </h:form>
+                </p:panel>
+
+                <p:panel header="Informações do campo:">
+                    <p:panelGrid columns="2">
+
+                        <p:outputLabel value="Label"/>     #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).label}
+                        <p:outputLabel value="Validação regex:"/>   #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).validacaoRegex}
+                        <p:outputLabel value="é um numeral?"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).listaDeOpcoes}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascara}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeral}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeroDeCasasDecimais}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).moeda}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).obrigatorio}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temMascara}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMaximo}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMinimo}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoRegex}
+                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}
+
+                    </p:panelGrid>
+
+                </p:panel>
+                <p:spacer/><p:spacer/>
+                #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}
+
+
+                <p:panel header="LABORATÓRIO" >
+
+                    <h:form id="formularioTeste2">
+                        <br/>SITE<br/>
+                        <p:inputText id="campoTeste2"
+                                     required="true"
+                                     value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}"
+
+                                     >
+                            <!-- FUNCIONOU COM REGEX NATIVO-->
+                            <f:validateRegex pattern="####"/>
+                        </p:inputText>
+
+                        <p:message for="campoTeste2"/>
+                        <p:commandButton value="TestaValidação" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}" />
+                    </h:form>
+
+
+
+
+
+                    <h:form id="formularioTeste">
+                        <br/> EMAIL<br/>
+                        <p:inputText id="campoTeste"
+                                     required="true"
+                                     value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}"
+
+                                     >
+
+                        </p:inputText>
+
+                        <p:message for="campoTeste"/>
+                        <p:commandButton value="TestaValidação" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
+                    </h:form>
+                </p:panel>
+
+
+
+            </h:panelGroup>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <SBComp:infoPagina/>
 
 
         </ui:define>

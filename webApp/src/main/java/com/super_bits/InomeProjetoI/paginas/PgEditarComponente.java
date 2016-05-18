@@ -15,6 +15,8 @@ import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastro
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.SessionScoped;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -25,7 +27,7 @@ import javax.inject.Named;
 @InfoAcaoEditorComponente(acao = FabAcaoEditorDeComponentes.COMPONENTE_MB_GERENCIAR)
 @InfoPagina(nomeCurto = "ECOMP", tags = {"Editor de Componentes"})
 @Named
-@ViewScoped
+@SessionScoped
 public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     private List<String> componentesExistentes;
