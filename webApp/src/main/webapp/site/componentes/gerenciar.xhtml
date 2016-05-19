@@ -77,17 +77,17 @@
 
                         <p:outputLabel value="Label"/>     #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).label}
                         <p:outputLabel value="Validação regex:"/>   #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).validacaoRegex}
-                        <p:outputLabel value="é um numeral?"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).listaDeOpcoes}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascara}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeral}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeroDeCasasDecimais}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).moeda}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).obrigatorio}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temMascara}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMaximo}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMinimo}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoRegex}
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}
+                        <p:outputLabel value="é uma lista de opções? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).listaDeOpcoes}
+                        <p:outputLabel value="é uma mascara? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascara}
+                        <p:outputLabel value="é um numeral? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeral}
+                        <p:outputLabel value="numero de casas decimais "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeroDeCasasDecimais}
+                        <p:outputLabel value="é do tipo moeda? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).moeda}
+                        <p:outputLabel value="é obrigatorio? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).obrigatorio}
+                        <p:outputLabel value="tem mascara? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temMascara}
+                        <p:outputLabel value="tem validação maximo? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMaximo}
+                        <p:outputLabel value="tem validação minimo? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMinimo}
+                        <p:outputLabel value="tem validação regex? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoRegex}
+                        <p:outputLabel value="qual valor? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}
 
                     </p:panelGrid>
 
@@ -114,9 +114,6 @@
                     </h:form>
 
 
-
-
-
                     <h:form id="formularioTeste">
                         <br/> EMAIL<br/>
                         <p:inputText id="campoTeste"
@@ -130,7 +127,41 @@
                         <p:message for="campoTeste"/>
                         <p:commandButton value="TestaValidação" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
                     </h:form>
+
+                    <h:form id="formularioTeste3">
+                        <br/> TELEFONE<br/>
+                        <p:inputText id="campoTeste3"
+                                     required="true"
+                                     value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}"
+
+                                     >
+
+                        </p:inputText>
+
+                        <p:message for="campoTeste3"/>
+                        <p:commandButton value="TestaValidação" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
+                    </h:form>
+
                 </p:panel>
+
+                <c:if test="#{!cc.attrs.registro.temMascara}">
+                    <p:inputText  class="campoResponsivo  TexAlCenter" id="#{idcompInput}"  value="#{cc.attrs.registro.valor}"  required="#{cc.attrs.registro.obrigatorio}"  disabled="#{cc.attrs.desabilitarEdicao}" >
+                        <c:if test="#{cc.attrs.registro.temValidacaoRegex}">
+                            <f:validateRegex pattern="#{cc.attrs.registro.validacaoRegex}"/>
+                        </c:if>
+                    </p:inputText>
+                </c:if>
+
+                <c:if test="#{cc.attrs.registro.temMascara}">
+
+
+                    <p:inputMask class="campoResponsivo  TexAlCenter"  mask="#{cc.attrs.registro.mascaraJqueryMode}" id="#{idcompInput}"  value="#{cc.attrs.registro.valor}"  required="#{cc.attrs.registro.obrigatorio}"  disabled="#{cc.attrs.desabilitarEdicao}"  >
+                        <c:if test="#{cc.attrs.registro.temValidacaoRegex}">
+                            <f:validateRegex pattern="#{cc.attrs.registro.validacaoRegex}"/>
+                        </c:if>
+                    </p:inputMask>
+
+                </c:if>
 
 
 
