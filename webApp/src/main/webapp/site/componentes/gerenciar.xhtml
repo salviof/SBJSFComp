@@ -74,9 +74,9 @@
 
                 <p:panel header="Informações do campo:">
                     <p:panelGrid columns="2">
-
-                        <p:outputLabel value="Label"/>     #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).label}
-                        <p:outputLabel value="Validação regex:"/>   #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).validacaoRegex}
+                        <p:outputLabel value="msk jqry"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascaraJqueryMode}
+                        <p:outputLabel value="Label"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).label}
+                        <p:outputLabel value="Validação regex:"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).validacaoRegex}
                         <p:outputLabel value="é uma lista de opções? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).listaDeOpcoes}
                         <p:outputLabel value="é uma mascara? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascara}
                         <p:outputLabel value="é um numeral? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeral}
@@ -129,13 +129,13 @@
                     </h:form>
 
                     <h:form id="formularioTeste3">
-                        <br/> TELEFONE<br/>
+                        <br/> TELEFONE FIXO INTERNACIONAL<br/>
                         <p:inputText id="campoTeste3"
                                      required="true"
                                      value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}"
 
                                      >
-
+                            <f:validateRegex pattern="^((55)\s?)(\(([1-9][0-9])\)\s?)(((9\d|[2-9])\d{3})\-(\d{4}))$"></f:validateRegex>
                         </p:inputText>
 
                         <p:message for="campoTeste3"/>
@@ -143,25 +143,6 @@
                     </h:form>
 
                 </p:panel>
-
-                <c:if test="#{!cc.attrs.registro.temMascara}">
-                    <p:inputText  class="campoResponsivo  TexAlCenter" id="#{idcompInput}"  value="#{cc.attrs.registro.valor}"  required="#{cc.attrs.registro.obrigatorio}"  disabled="#{cc.attrs.desabilitarEdicao}" >
-                        <c:if test="#{cc.attrs.registro.temValidacaoRegex}">
-                            <f:validateRegex pattern="#{cc.attrs.registro.validacaoRegex}"/>
-                        </c:if>
-                    </p:inputText>
-                </c:if>
-
-                <c:if test="#{cc.attrs.registro.temMascara}">
-
-
-                    <p:inputMask class="campoResponsivo  TexAlCenter"  mask="#{cc.attrs.registro.mascaraJqueryMode}" id="#{idcompInput}"  value="#{cc.attrs.registro.valor}"  required="#{cc.attrs.registro.obrigatorio}"  disabled="#{cc.attrs.desabilitarEdicao}"  >
-                        <c:if test="#{cc.attrs.registro.temValidacaoRegex}">
-                            <f:validateRegex pattern="#{cc.attrs.registro.validacaoRegex}"/>
-                        </c:if>
-                    </p:inputMask>
-
-                </c:if>
 
 
 
