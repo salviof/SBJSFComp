@@ -7,6 +7,7 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreDataHora;
+import com.super_bits.modulosSB.SBCore.fabrica.ItfFabrica;
 
 /**
  *
@@ -42,6 +43,11 @@ public class ConfigPercistenciaWPDemo implements ItfConfigSBPersistencia {
     @Override
     public void criarBancoInicial() {
 
+    }
+
+    @Override
+    public Class<? extends ItfFabrica>[] fabricasRegistrosIniciais() {
+        return null;
     }
 
 }
