@@ -20,7 +20,7 @@ import javax.inject.Named;
 @Named
 @InfoPagina(tags = "Pagina inicial criação de componentes", nomeCurto = "PGINI")
 @ViewScoped
-public class PhHomeSBComp extends MB_PaginaConversation {
+public class PgHomeSBComp extends MB_PaginaConversation {
 
     private String teste = "tesssssssteeeeeeeeee Colé humano! Sá parada funciona doidin.";
 

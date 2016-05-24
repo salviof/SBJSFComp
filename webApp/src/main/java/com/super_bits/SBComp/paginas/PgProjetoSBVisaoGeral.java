@@ -10,6 +10,7 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.InfoAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.model.ModuloAcaoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoFormulario;
 import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
@@ -33,6 +34,8 @@ public class PgProjetoSBVisaoGeral extends MB_PaginaConversation {
     private ModuloAcaoSistema moduloSelecionado;
     private List<ModuloAcaoSistema> modulosDoSistema;
     private List<ItfBeanSimples> objetosDoSistema;
+    private AcaoFormulario acaoVisualizarPontosDeFuncao;
+    private AcaoFormulario acaoVisualizarBancoDeDados;
 
     public List<AcaoDoSistema> getAcoesGestaoDoModulo() {
         return acoesGestaoDoModulo;
@@ -42,6 +45,38 @@ public class PgProjetoSBVisaoGeral extends MB_PaginaConversation {
     public void init() {
         modulosDoSistema = (List) MapaAcoesSistema.getModulos();
 
+    }
+
+    public AcaoDoSistema getAcaoSelecionada() {
+        return acaoSelecionada;
+    }
+
+    public void setAcaoSelecionada(AcaoDoSistema acaoSelecionada) {
+        this.acaoSelecionada = acaoSelecionada;
+    }
+
+    public ModuloAcaoSistema getModuloSelecionado() {
+        return moduloSelecionado;
+    }
+
+    public void setModuloSelecionado(ModuloAcaoSistema moduloSelecionado) {
+        this.moduloSelecionado = moduloSelecionado;
+    }
+
+    public List<ModuloAcaoSistema> getModulosDoSistema() {
+        return modulosDoSistema;
+    }
+
+    public void setModulosDoSistema(List<ModuloAcaoSistema> modulosDoSistema) {
+        this.modulosDoSistema = modulosDoSistema;
+    }
+
+    public List<ItfBeanSimples> getObjetosDoSistema() {
+        return objetosDoSistema;
+    }
+
+    public void setObjetosDoSistema(List<ItfBeanSimples> objetosDoSistema) {
+        this.objetosDoSistema = objetosDoSistema;
     }
 
     public void setAcoesGestaoDoModulo(List<AcaoDoSistema> acoesGestaoDoModulo) {

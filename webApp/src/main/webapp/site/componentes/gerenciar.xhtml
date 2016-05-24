@@ -30,6 +30,9 @@
                 <h:form>
 
 
+                    <b> sdfsdfsdf</b>
+
+
 
                     <p:panelGrid columns="2">
                         <p:selectOneMenu converter="conversorGenerico"
@@ -46,8 +49,15 @@
                 <p:panel  >
                     <h:form>
                         <p:panelGrid columns="2">
+
+
+
+
                             <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelSuperior}"
                                            registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+
+
+
                             <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
                         </p:panelGrid>
                     </h:form>
