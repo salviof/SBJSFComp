@@ -6,6 +6,7 @@
 package com.super_bits.SBComp.paginas;
 
 import com.super_bits.Controller.Interfaces.ItfModuloAcaoSistema;
+import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.InfoAcaoAcessoRestritoExemplo;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.InfoAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.model.ModuloAcaoSistema;
@@ -14,6 +15,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoFormulario;
 import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -27,6 +29,7 @@ import javax.inject.Named;
 @Named
 @SessionScoped
 @InfoAcaoProjetoSB(acao = FabAcaoProjetoSB.PROJETO_GERENCIAR_MB)
+@InfoPagina(nomeCurto = "Proj", tags = "Andamento do Projeto")
 public class PgProjetoSBVisaoGeral extends MB_PaginaConversation {
 
     private List<AcaoDoSistema> acoesGestaoDoModulo;

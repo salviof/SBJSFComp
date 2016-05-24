@@ -8,8 +8,10 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabMenuExemplo;
 import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.SBComp.paginas.PgHomeSBComp;
+import com.super_bits.SBComp.paginas.PgProjetoSBVisaoGeral;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgDemoComponente;
 import com.super_bits.view.menu.ItfFabricaMenu;
 import java.util.Map;
@@ -37,6 +39,8 @@ public class SiteMap extends MB_SiteMapa {
     private PgEditarComponente editarCompoente;
     @Inject
     private PgHomeSBComp paginaInicial;
+    @Inject
+    private PgProjetoSBVisaoGeral visaoGeral;
 
     // Paginas do Sistema.
     @Override
