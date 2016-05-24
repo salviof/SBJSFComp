@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.super_bits.InomeProjetoI.paginas;
+package com.super_bits.SBComp.paginas;
 
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
@@ -20,7 +20,7 @@ import javax.inject.Named;
 @Named
 @InfoPagina(tags = "Pagina inicial criação de componentes", nomeCurto = "PGINI")
 @ViewScoped
-public class PgPaginaInicial extends MB_PaginaConversation {
+public class PhHomeSBComp extends MB_PaginaConversation {
 
     private String teste = "tesssssssteeeeeeeeee Colé humano! Sá parada funciona doidin.";
 

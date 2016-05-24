@@ -6,8 +6,8 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabMenuExemplo;
-import com.super_bits.InomeProjetoI.paginas.PgEditarComponente;
-import com.super_bits.InomeProjetoI.paginas.PgPaginaInicial;
+import com.super_bits.SBComp.paginas.PgEditarComponente;
+import com.super_bits.SBComp.paginas.PhHomeSBComp;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgDemoComponente;
@@ -36,7 +36,7 @@ public class SiteMap extends MB_SiteMapa {
     @Inject
     private PgEditarComponente editarCompoente;
     @Inject
-    private PgPaginaInicial paginaInicial;
+    private PhHomeSBComp paginaInicial;
 
     // Paginas do Sistema.
     @Override

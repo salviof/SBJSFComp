@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.super_bits.InomeProjetoI.paginas;
+package com.super_bits.SBComp.paginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
@@ -17,10 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 
-import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 /**
+ *
+ *
  *
  * @author desenvolvedor
  */

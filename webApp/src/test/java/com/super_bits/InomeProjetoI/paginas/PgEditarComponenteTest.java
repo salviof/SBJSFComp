@@ -5,6 +5,7 @@
  */
 package com.super_bits.InomeProjetoI.paginas;
 
+import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
