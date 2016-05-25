@@ -8,7 +8,7 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabMenuExemplo;
 import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.SBComp.paginas.PgHomeSBComp;
-import com.super_bits.SBComp.paginas.PgProjetoSBVisaoGeral;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;

@@ -5,6 +5,9 @@
  */
 package com.super_bits.SBComp.paginas;
 
+import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
+import com.super_bits.Controller.Interfaces.ItfModuloAcaoSistema;
+import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.config.webPaginas.TesteBasico;
 import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
@@ -27,10 +30,19 @@ public class PgProjetoSBVisaoGeralTest extends TesteJunit {
         try {
 
             String xhtml = FabAcaoProjetoSB.PROJETO_GERENCIAR_MB.getAcaoEntidadeFormulario().getXhtml();
-            PgProjetoSBVisaoGeral teste = new PgProjetoSBVisaoGeral();
-            teste.getAcaoVinculada();
+            PgProjetoSBVisaoGeral paginaProgeto = new PgProjetoSBVisaoGeral();
+            paginaProgeto.getAcaoVinculada();
+            paginaProgeto.init();
 
-            System.out.println(teste.getAcaoVinculada().getXhtml());
+            for (ItfModuloAcaoSistema modulo : paginaProgeto.getModulosDoSistema()) {
+                System.out.println(modulo.getNome());
+                for (ItfAcaoDoSistema acao : modulo.getAcoes()) {
+                    System.out.println(acao.getNome());
+
+                }
+            }
+
+            System.out.println(paginaProgeto.getAcaoVinculada().getXhtml());
         } catch (Throwable t) {
             lancarErroJUnit(t);
         }
