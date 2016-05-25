@@ -29,6 +29,13 @@
             #{paginaAtual.infoPagina.acaoVinculada.xhtml}
 
             <h:form>
+                
+                
+                <c:forEach items="#{pgEditarComponente.camposDisponiveis}" var="camp" >
+                    #{camp}  #{camp.id}<br/>
+                
+                </c:forEach> 
+                
                 <p:messages autoUpdate="true" />
                 selecionado=   #{pgEditarComponente.campoSelecionado.caminhoCompletoString} -------Caminho Curto= #{pgEditarComponente.campoSelecionado.caminhoSemNomeClasse}<br/>
                 <p:selectOneMenu converter="conversorGenerico" value="#{pgEditarComponente.campoSelecionado}" >

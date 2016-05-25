@@ -11,7 +11,6 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -26,6 +25,7 @@ public class PgEditarComponenteTest extends TesteJunit {
         for (CaminhoCampoReflexao caminho : pagina.getCamposDisponiveis()) {
             System.out.println("Caminho Completo:" + caminho.getCaminhoCompletoString());
             System.out.println("Caminho parcial:" + caminho.getCaminhoSemNomeClasse());
+            System.out.println("ID CaminhoParcial:" + caminho.getId());
         }
 
     }
