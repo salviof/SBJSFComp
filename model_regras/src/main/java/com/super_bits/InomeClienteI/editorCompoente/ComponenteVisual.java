@@ -23,18 +23,22 @@ public class ComponenteVisual extends ItemNormal {
     private String nome;
     private String xhtml;
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
 
+    @Override
     public String getNome() {
         return nome;
     }
 
+    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }

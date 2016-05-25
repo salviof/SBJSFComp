@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.super_bits.InomeProjetoI.paginas;
+package com.super_bits.SBComp.paginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.InfoAcaoAcessoRestritoExemplo;

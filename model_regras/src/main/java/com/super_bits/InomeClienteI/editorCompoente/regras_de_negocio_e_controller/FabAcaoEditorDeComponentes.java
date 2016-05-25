@@ -10,14 +10,14 @@ import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoEntidade;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoGerenciarEntidade;
-import com.super_bits.Controller.anotacoes.InfoAcaoFormulario;
-import com.super_bits.Controller.anotacoes.InfoAcaoGestaoEntidade;
 import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
+import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
+import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 
 /**
  *
@@ -27,15 +27,15 @@ import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
 
 public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
-    @InfoAcaoGestaoEntidade(icone = "fa fa-paint-brush", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
+    @InfoTipoAcaoGestaoEntidade(icone = "fa fa-paint-brush", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
     COMPONENTE_MB_GERENCIAR,
-    @InfoAcaoFormulario(xhtmlDaAcao = "/site/componentes/editar.xhtml")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/editar.xhtml")
     COMPONENTE_FRM_EDITAR,
-    @InfoAcaoFormulario(xhtmlDaAcao = "/site/componentes/listar.xhtml")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/listar.xhtml")
     COMPONENTE_FRM_LISTAR,
-    @InfoAcaoFormulario(xhtmlDaAcao = "/site/componentes/novo.xhtml")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/novo.xhtml")
     COMPONENTE_FRM_NOVO,
-    @InfoAcaoFormulario(xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
     COMPONENTE_FRM_VISUALIZAR;
 
     @Override

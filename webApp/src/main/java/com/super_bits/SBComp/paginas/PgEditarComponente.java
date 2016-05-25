@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.super_bits.InomeProjetoI.paginas;
+package com.super_bits.SBComp.paginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
@@ -15,17 +15,20 @@ import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastro
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.SessionScoped;
+
 import javax.inject.Named;
 
 /**
+ *
+ *
  *
  * @author desenvolvedor
  */
 @InfoAcaoEditorComponente(acao = FabAcaoEditorDeComponentes.COMPONENTE_MB_GERENCIAR)
 @InfoPagina(nomeCurto = "ECOMP", tags = {"Editor de Componentes"})
 @Named
-@ViewScoped
+@SessionScoped
 public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     private List<String> componentesExistentes;

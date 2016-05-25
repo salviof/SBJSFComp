@@ -5,6 +5,7 @@
 package com.super_bits.InomeClienteI.editorCompoente.model.config;
 
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
+import com.super_bits.modulosSB.SBCore.fabrica.ItfFabrica;
 
 /**
  *
@@ -46,6 +47,11 @@ public class ConfigPersistenciaInomeProjetoI implements ItfConfigSBPersistencia 
     @Override
     public void criarBancoInicial() {
         //configure aqui os comando de SQL que devem ser executados no momento do start da aplicação
+    }
+
+    @Override
+    public Class<? extends ItfFabrica>[] fabricasRegistrosIniciais() {
+        return null;
     }
 
 }

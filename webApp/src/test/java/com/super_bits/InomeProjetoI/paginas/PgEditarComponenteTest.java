@@ -5,6 +5,7 @@
  */
 package com.super_bits.InomeProjetoI.paginas;
 
+import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
@@ -25,7 +26,13 @@ public class PgEditarComponenteTest extends TesteJunit {
         for (CaminhoCampoReflexao caminho : pagina.getCamposDisponiveis()) {
             System.out.println("Caminho Completo:" + caminho.getCaminhoCompletoString());
             System.out.println("Caminho parcial:" + caminho.getCaminhoSemNomeClasse());
+<<<<<<< HEAD
             System.out.println("ID CaminhoParcial:" + caminho.getId());
+=======
+            System.out.println("String" + caminho.toString());
+            System.out.println("ID:" + caminho.getId());
+            System.out.println(caminho.getNomeCurto());
+>>>>>>> 0616ef8c7560dc5330b3f08045d88087dfe05abc
         }
 
     }
