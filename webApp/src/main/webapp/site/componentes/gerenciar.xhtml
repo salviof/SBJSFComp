@@ -27,24 +27,7 @@
         <ui:define name="divConteudo">
             <h:panelGroup id="exbicaoDeComponentes">
 
-<<<<<<< HEAD
-            <h:form>
-                
-                
-                <c:forEach items="#{pgEditarComponente.camposDisponiveis}" var="camp" >
-                    #{camp}  #{camp.id}<br/>
-                
-                </c:forEach> 
-                
-                <p:messages autoUpdate="true" />
-                selecionado=   #{pgEditarComponente.campoSelecionado.caminhoCompletoString} -------Caminho Curto= #{pgEditarComponente.campoSelecionado.caminhoSemNomeClasse}<br/>
-                <p:selectOneMenu converter="conversorGenerico" value="#{pgEditarComponente.campoSelecionado}" >
-=======
                 <h:form>
->>>>>>> 0616ef8c7560dc5330b3f08045d88087dfe05abc
-
-
-                    <b> sdfsdfsdf</b>
 
 
 
@@ -63,15 +46,8 @@
                 <p:panel  >
                     <h:form>
                         <p:panelGrid columns="2">
-
-
-
-
                             <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelSuperior}"
                                            registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-
-
-
                             <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
                         </p:panelGrid>
                     </h:form>
