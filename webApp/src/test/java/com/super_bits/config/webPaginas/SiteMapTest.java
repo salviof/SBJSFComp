@@ -40,11 +40,9 @@ public class SiteMapTest extends TesteJunit {
 
             System.out.println(pagina);
 
-            WebPaginasServlet testeWPServlet = new WebPaginasServlet();
-
-            testeWPServlet.init();
+//            WebPaginasServlet testeWPServlet = new WebPaginasServlet();
+            //          testeWPServlet.init();
             //  testeWPServlet.buildMapaRecurso();
-
             List<ItfB_Pagina> paginas = new ArrayList();
             paginas.addAll(mapa.getPaginasOfflineEmLista());
             Map<String, ItfB_Pagina> paginasCadastradas = new HashMap<>();
