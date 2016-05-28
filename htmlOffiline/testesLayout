@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+            <meta name="apple-mobile-web-app-capable" content="yes"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/theme.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/font-awesome.css"><script type="text/javascript" src="testesLayout_arquivos/ativarGridsResp.js"></script><script type="text/javascript" src="testesLayout_arquivos/correcaoBugJsf.js"></script><script type="text/javascript" src="testesLayout_arquivos/jquery.js"></script><script type="text/javascript" src="testesLayout_arquivos/primefaces.js"></script><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/primefaces.css"><script type="text/javascript" src="testesLayout_arquivos/jquery-plugins.js"></script><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/tabelasALinhamento.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/core-layout.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/animate.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/adamantium-font.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/ripple-effect.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/perfect-scrollbar.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/font-awesome_002.css"><link type="text/css" rel="stylesheet" href="testesLayout_arquivos/adamantium-layout.css"><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.projectStage='Development';}</script>
+        <title>Pagina de Validação</title><script type="text/javascript" src="testesLayout_arquivos/ripple-effect.js"></script><script type="text/javascript" src="testesLayout_arquivos/perfect-scrollbar.js"></script><script type="text/javascript" src="testesLayout_arquivos/layout.js"></script><script type="text/javascript" src="testesLayout_arquivos/auxiliarPrimeFaces.js"></script>
+            <style>
+                .botaoBox {
+                    margin-top: 3px;
+                }
+            </style>
+            
+   <link rel="stylesheet" href="fontaw/css/font-awesome.css">         
+            
+            </head>
+	    <body>
+
+        
+        <div style="visibility: hidden;">
+<form id="contactfrm" name="contactfrm" method="post" action="/super_compras/resources/SBComp/SBSystemPages/exemplosAdamantium/validacao.xhtml;jsessionid=61E5845BA2DBE716B63B8585AFC6466D?cid=1" enctype="application/x-www-form-urlencoded">
+<input name="contactfrm" value="contactfrm" type="hidden">
+<script type="text/javascript">enviarInfoTela = function() {PrimeFaces.ab({s:"contactfrm:j_idt23",f:"contactfrm",pa:arguments[0]});}</script><input value="aplicativo:Netscape||versaoAplicativo:5.0 (X11)||tamanhoX:1143||tamanhoY:858" aria-readonly="false" aria-disabled="false" role="textbox" id="contactfrm:clientinfo" name="contactfrm:clientinfo" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" type="text"><input name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="4139762221685120306:6383607850162188394" autocomplete="off" type="hidden">
+</form>
+        </div><script type="text/javascript" src="testesLayout_arquivos/telaInfo.js"></script>
+
+ 
+            <div class="Container100 Responsive100" style="margin-left: 1%">
+            
+              <div class="Container20 Responsive50"  style="margin-left: 1%">
+             
+                <div class="Card">
+	    
+		   <h4 class="Container100 Responsive25" align = "center"> CAMPANHA DO LABORATÓRIO TESTE </h4>
+	    
+                    <div class="Container100 Responsive25">
+
+                        <div class="ContainerIndent">
+
+                            <div class="Card" style="padding: 1%">
+			      <img class="Container100 Responsive100" style="height:100%" src="https://s3.amazonaws.com/vipcommerce-static/files/banners/banner_FRETE_GRATIS.jpg"/>
+                            </div>
+                            
+                               <div class="Card" style="padding: 1%; background-color: #214e7b; margin-top: 3%; text-align: center">
+                                    <a href="https://www.vipfacil.com.br/" style="color: #ffffff">COMPRE JÁ!!!</a>
+                                </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+               
+         </div>
+         
+      </body>
+      
+  </html>
