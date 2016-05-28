@@ -42,6 +42,10 @@ public class SiteMap extends MB_SiteMapa {
     @Inject
     private PgProjetoSBVisaoGeral visaoGeral;
 
+    public SiteMap() {
+        super();
+    }
+
     // Paginas do Sistema.
     @Override
     protected Map<String, ItfB_Pagina> buildPaginas() {

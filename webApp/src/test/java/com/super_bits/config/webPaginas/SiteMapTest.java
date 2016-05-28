@@ -12,6 +12,7 @@ import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.util.testes.UtilTestePagina;
+import com.super_bits.modulosSB.webPaginas.controller.servletes.WebPaginasServlet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +36,15 @@ public class SiteMapTest extends TesteJunit {
             SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebExemplo.HOMOLOGACAO.getConfiguracaoWebPaginas());
             SiteMap mapa = new SiteMap();
 
+            ItfB_Pagina pagina = mapa.getPaginaNoContexto("/site/home.xhtml");
+
+            System.out.println(pagina);
+
+            WebPaginasServlet testeWPServlet = new WebPaginasServlet();
+
+            testeWPServlet.init();
+            //  testeWPServlet.buildMapaRecurso();
+
             List<ItfB_Pagina> paginas = new ArrayList();
             paginas.addAll(mapa.getPaginasOfflineEmLista());
             Map<String, ItfB_Pagina> paginasCadastradas = new HashMap<>();
@@ -47,20 +57,6 @@ public class SiteMapTest extends TesteJunit {
 
             System.out.println(xhtmlTeste);
 
-            for (ItfB_Pagina pagina : paginas) {
-                System.out.println("XHTML:::::" + pagina.getRecursoXHTML());
-                System.out.println("#### ADICIONANDO--->" + pagina.getNomeCurto() + "<---");
-
-                if (paginasCadastradas.get(pagina.getNomeCurto()) != null) {
-                    throw new UnsupportedOperationException("A tag de atalho " + pagina.getNomeCurto() + " já foi usada em " + pagina.getClass().getSimpleName());
-                }
-
-                paginasCadastradas.put(pagina.getNomeCurto(), pagina);
-                System.out.println(pagina.getNomeCurto());
-                System.out.println("Validando" + pagina.getClass().getSimpleName());
-                UtilTestePagina.testaConfigPaginaBasico(pagina);
-
-            }
         } catch (Throwable t) {
             lancarErroJUnit(t);
         }

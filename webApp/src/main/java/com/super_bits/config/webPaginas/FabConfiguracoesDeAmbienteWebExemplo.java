@@ -58,6 +58,7 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
                 cfg.setEstadoAPP(SBCore.ESTADO_APP.DESENVOLVIMENTO);
                 cfg.setCentralMEnsagens(CentramMensagemProgramadorMsgStop.class);
                 cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
+                cfg.setCentralMEnsagens(CentramMensagemProgramadorMsgStop.class);
                 break;
             case HOMOLOGACAO:
                 cfg.setEstadoAPP(SBCore.ESTADO_APP.HOMOLOGACAO);
