@@ -26,11 +26,11 @@
             <version>1.5.2-SNAPSHOT</version>
         </dependency>
 
-        
+
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>5.0</version>
+            <version>5.3</version>
         </dependency>
 
 
@@ -45,19 +45,15 @@
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>resources-codemirror</artifactId>
-            <version>3.2.0</version>
+            <version>4.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>resources-ckeditor</artifactId>
-            <version>3.2.0</version>
+            <version>4.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>5.3</version>
-        </dependency>
+
         <dependency>
             <groupId>com.super_bits.view.primefaces</groupId>
             <artifactId>adamantium</artifactId>
