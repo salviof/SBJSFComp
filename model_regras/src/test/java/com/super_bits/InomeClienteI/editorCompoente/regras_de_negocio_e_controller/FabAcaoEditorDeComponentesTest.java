@@ -5,13 +5,13 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.Controller.UtilFabricaDeAcoesBasico;
 import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
+import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.SBCore.InfoCampos.campo.GrupoCampos;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteAcaoDoSistema;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -31,6 +31,13 @@ public class FabAcaoEditorDeComponentesTest extends TesteAcaoDoSistema {
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), true);
+
+        for (GrupoCampos grp : FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoDoSistema().comoFormulario().getGruposDeCampos()) {
+            System.out.println("GRUPOOOOO " + grp.getNomeGrupo());
+            for (CaminhoCampoReflexao campo : grp.getCampos()) {
+                System.out.println(campo.getCaminhoCompletoString());
+            }
+        }
     }
 
 }
