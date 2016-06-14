@@ -14,7 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.bean.BeanExemplo;
+import com.super_bits.SBComp.Model.BeanExemplo;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.ArrayList;
@@ -42,9 +42,6 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
     private List<CaminhoCampoReflexao> camposDisponiveis;
     private final BeanExemplo beanExemplo = new BeanExemplo();
 
-    private ItfAcaoFormulario acaoFormularioTeste;
-    private UsuarioSB registroFormularioTeste;
-
     public PgEditarComponente() {
         super(new AcaoDoSistema[]{
             FabAcaoEditorDeComponentes.COMPONENTE_FRM_VISUALIZAR.getAcaoDoSistema(),
@@ -60,8 +57,7 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     @PostConstruct
     public void inicioAposConstruir() {
-        acaoFormularioTeste = FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoEntidadeFormulario();
-        registroFormularioTeste = new UsuarioSB();
+
     }
 
     public List<String> getComponentesExistentes() {

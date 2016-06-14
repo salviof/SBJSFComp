@@ -56,8 +56,8 @@
 
                     <h:form>
                         <p:panelGrid columns="2">
-                            <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.resumido}"
-                                           registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                            <SBComp:input   tipoExibicaoCampo="#{tipos.tipoVisualCampo.resumido}"
+                                            registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
                             <p:commandButton value="Validar" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
                         </p:panelGrid>
 
@@ -65,8 +65,8 @@
 
                     <h:form>
                         <p:panelGrid columns="2">
-                            <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelEsquerda}"
-                                           registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                            <SBComp:input tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelEsquerda}"
+                                          registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
                             <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
                         </p:panelGrid>
                     </h:form>
@@ -140,6 +140,7 @@
                         <p:message for="telefone"/>
                         <p:commandButton value="TestaValidação" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
                     </h:form>
+
 
 
                     <h:form id="celular">
@@ -486,7 +487,7 @@
 
             </h:panelGroup>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <SBComp:infoPagina/>
+            <SBComp:infoPagina />
 
 
         </ui:define>
