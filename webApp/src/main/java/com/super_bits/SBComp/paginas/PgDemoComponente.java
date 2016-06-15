@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.InfoAcaoDoSistemaSB;
-import com.super_bits.SBComp.Model.BeanExemplo;
+import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.webPaginas.util.UtilSBWPServletTools;
 

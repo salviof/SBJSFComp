@@ -7,7 +7,7 @@ package com.super_bits.SBComp.Model;
 
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
-import com.super_bits.SBComp.Model.BeanExemplo;
+import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.config.webPaginas.TesteBasico;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 

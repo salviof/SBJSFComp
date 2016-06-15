@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.super_bits.SBComp.Model;
+package com.super_bits.InomeClienteI.editorCompoente.model;
 
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeContatoCorporativo;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
