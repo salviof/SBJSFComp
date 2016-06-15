@@ -1,0 +1,16 @@
+OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA: 
+ Você pode encontrar informações mais detalhadas do erro no SystemOut 
+->O Icone da acao FabAcaoSeguranca.ACAO_CTR_INTERNA_DO_SISTEMA esta nulo
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/editarGrupo.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_LISTAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/listar.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_LISTAR_USUARIOS não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/segurança/grupousuariosb/listar.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_NOVO não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/usuario/grupo/editarGrupo.xhtml
+->O ícone  da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_CTR_SALVAR_MERGE com nome [fa-save (alias)] não foi encontrado no arquivo css do FontAswome e
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/restrito/restrito.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.USUARIO_FRM_LISTAR_GRUPOS não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/usuario/gruposDoUsuario.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_LISTAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/listarGrupos.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/editarGrupo.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/gerenciarGrupo.xhtml
+

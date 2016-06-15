@@ -20,10 +20,13 @@ import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
  *
  * @author salvioF
  */
-public enum FabTestesBeanExemplo implements ItfFabricaAcoes {
+@InfoModuloSBComp(modulo = FabModulosJSFComp.DEMONSTRACAO_BASICA)
+public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
 
+    beanExempplo_MB_gerenciar,
     @InfoTipoAcaoFormulario(campos = {""})
-    beanExemplo_FRM_Teste;
+    beanExemplo_FRM_NOVO_Teste,
+    beanExemplo_FRM_teste2FormMuiltiplasEntidades;
 
     @Override
     public ItfAcaoDoSistema getAcaoDoSistema() {
@@ -32,7 +35,7 @@ public enum FabTestesBeanExemplo implements ItfFabricaAcoes {
 
     @Override
     public ItfAcaoEntidade getAcaoDeEntidade() {
-        return getAcaoDeEntidade();
+        return (ItfAcaoEntidade) getAcaoDoSistema();
     }
 
     @Override

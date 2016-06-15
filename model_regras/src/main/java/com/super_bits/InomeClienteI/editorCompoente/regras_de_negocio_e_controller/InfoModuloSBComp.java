@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface InfoModuloInomeProjetoI {
+public @interface InfoModuloSBComp {
 
     FabModulosJSFComp modulo();
 }

@@ -8,6 +8,7 @@ package com.super_bits.InomeClienteI.editorCompoente.model;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeContatoCorporativo;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoCampo;
+import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import java.util.Date;
 import javax.validation.constraints.NotNull;
@@ -24,6 +25,7 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  *
  */
+@InfoClasse(tags = {"Objeto Exemplo"})
 public class BeanExemplo
         extends EntidadeContatoCorporativo {
 

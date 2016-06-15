@@ -23,8 +23,7 @@ import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
  *
  * @author desenvolvedor
  */
-@InfoModuloInomeProjetoI(modulo = FabModulosJSFComp.DEMONSTRACAO_ACESSO_RESTRITO)
-
+@InfoModuloSBComp(modulo = FabModulosJSFComp.DEMONSTRACAO_ACESSO_RESTRITO)
 public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-paint-brush", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
