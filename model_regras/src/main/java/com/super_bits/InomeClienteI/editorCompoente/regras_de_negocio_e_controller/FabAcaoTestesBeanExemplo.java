@@ -24,7 +24,7 @@ import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
 public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
 
     beanExempplo_MB_gerenciar,
-    @InfoTipoAcaoFormulario(campos = {""})
+    @InfoTipoAcaoFormulario(campos = {"[separador:nomeDo]"})
     beanExemplo_FRM_NOVO_Teste,
     beanExemplo_FRM_teste2FormMuiltiplasEntidades;
 

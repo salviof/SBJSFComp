@@ -55,7 +55,7 @@ public class PgDemoComponente extends MB_PaginaConversation {
     private String formulario;
     private int diferencialIDDinamico;
     private ItfAcaoFormulario acaoFormularioTeste;
-    private UsuarioSB registroFormularioTeste;
+    private BeanExemplo registroFormularioTeste;
 
     private ItfCampoInstanciado campoSelecionado;
 
@@ -76,7 +76,7 @@ public class PgDemoComponente extends MB_PaginaConversation {
     public void inicio() {
 
         acaoFormularioTeste = FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoEntidadeFormulario();
-        registroFormularioTeste = new UsuarioSB();
+        registroFormularioTeste = new BeanExemplo();
         listaDeAcaoes2.add(acaoSalvar);
         listaDeAcaoes2.add(acaoExcluir);
         listaDeAcaoes3.add(acaoSalvar);
@@ -235,7 +235,7 @@ public class PgDemoComponente extends MB_PaginaConversation {
         return acaoFormularioTeste;
     }
 
-    public UsuarioSB getRegistroFormularioTeste() {
+    public BeanExemplo getRegistroFormularioTeste() {
         return registroFormularioTeste;
     }
 
