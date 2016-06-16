@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.InfoAcaoDoSistemaSB;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
+import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.webPaginas.util.UtilSBWPServletTools;
 
@@ -75,7 +76,7 @@ public class PgDemoComponente extends MB_PaginaConversation {
     @PostConstruct
     public void inicio() {
 
-        acaoFormularioTeste = FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoEntidadeFormulario();
+        acaoFormularioTeste = FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste.getAcaoEntidadeFormulario();
         registroFormularioTeste = new BeanExemplo();
         listaDeAcaoes2.add(acaoSalvar);
         listaDeAcaoes2.add(acaoExcluir);

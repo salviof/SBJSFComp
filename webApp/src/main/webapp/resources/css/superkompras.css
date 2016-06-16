@@ -1,0 +1,95 @@
+
+
+
+
+.colunaLabel{
+    width: 120px;
+    text-align: left;
+
+}
+
+.Container40.Responsive100{
+    margin-right: 5%;
+}
+
+.colunaResponsiva{
+    width: auto;
+
+}
+
+.colunaCampoFixo{
+
+}
+
+.Container20.Campanha{
+    margin-left: 2%;
+}
+
+.Container40.Campanha{
+    margin-left: 5%;
+}
+
+.Container50.Responsive100{
+    margin-left: 5%;
+
+}
+
+.Container40.Responsive100.D{
+    margin-left: 3%;
+
+}
+
+.Container40.Responsive100.E{
+    margin-left: 3%;
+
+}
+
+.Container100.Responsive100{
+    line-height: 30%;
+}
+
+.Container33.Responsive100.E{
+    margin-left: 2%;
+
+}
+
+.Container33.Responsive100.D{
+    margin-left: 2%;
+
+}
+
+.Container60.Responsive100.D{
+    margin-left: 4%;
+}
+
+.campoResponsivo{
+    width:   94%!important;
+
+}
+
+.seletorResponsivo{
+    width:   80%!important;
+}
+
+.tabelaFormulario{
+    width:   100%!important;
+    line-height: 10%;
+}
+
+.Container20.Responsive
+{
+    padding: 2%;
+}
+
+
+.Container30.Responsive
+{
+    padding: 1%;
+}
+
+
+.invisivel{
+
+    display: none;
+}
+

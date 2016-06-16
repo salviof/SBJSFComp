@@ -23,17 +23,20 @@ import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
  */
 @InfoModuloSBComp(modulo = FabModulosJSFComp.DEMONSTRACAO_BASICA)
 public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
-
+    //
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-gears", precisaPermissao = false,
             nomeAcao = "Bean Exemplo Gerenciar",
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium//demonstracaoLayout.xhtml")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/demonstracaoLayout.xhtml")
     beanExempplo_MB_gerenciar,
     //
     @InfoTipoAcaoFormulario(campos = {"[separador:DadosUsuario 6 campos]", "nome", "cpf", "email", "telefone", "apelido", "senha",
         "[separador:DadosEmpresa 5 campos]", "cnpj", "inscricaoEstadual", "inscricaoMunicipal", "site", "telefone",
         "[separador:DadosMix 4 campos]", "nome", "telefone", "id", "cpf",
-        "[separador:DadosMix 3 campos]", "email", "insricaoMunicipal", "telefone"})
+        "[separador:DadosMix 3 campos]", "email", "inscricaoMunicipal", "telefone"},
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml", icone = "fa fa-edit")
     beanExemplo_FRM_NOVO_Teste,
+    //
+    @InfoTipoAcaoFormulario(icone = "fa fa-edit")
     beanExemplo_FRM_teste2FormMuiltiplasEntidades;
 
     @Override
