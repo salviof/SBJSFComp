@@ -11,6 +11,7 @@ import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoEntidade;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoGerenciarEntidade;
+import com.super_bits.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
@@ -37,7 +38,22 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     beanExemplo_FRM_NOVO_Teste,
     //
     @InfoTipoAcaoFormulario(icone = "fa fa-edit")
-    beanExemplo_FRM_teste2FormMuiltiplasEntidades;
+    beanExemplo_FRM_teste2FormMuiltiplasEntidades,
+    //
+    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-list",
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+    beanExemplo_FRM_LISTAR_Teste,
+    //
+    @InfoTipoAcaoController(icone = "fa fa-save")
+    beanExemplo_CTR_SALVAR_Test,
+    //
+    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-eyes",
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+    beanExemplo_FRM_VISUALIZAR_Test,
+    //
+    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-edit",
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+    beanExemplo_FRM_EDITAR_Test;
 
     @Override
     public ItfAcaoDoSistema getAcaoDoSistema() {
