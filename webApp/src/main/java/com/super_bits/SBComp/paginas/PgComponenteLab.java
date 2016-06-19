@@ -5,6 +5,7 @@
  */
 package com.super_bits.SBComp.paginas;
 
+import com.google.common.collect.Lists;
 import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
 import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
@@ -17,6 +18,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.InfoAcoesPaginaDoSistema;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 
@@ -29,6 +31,20 @@ import javax.inject.Named;
 @ViewScoped
 @InfoPagina(nomeCurto = "LC", tags = "Laboratorio de Componentes")
 public class PgComponenteLab extends MB_paginaCadastroEntidades<BeanExemplo> {
+
+    @PostConstruct
+    public void init() {
+
+        setEntidadeSelecionada(new BeanExemplo());
+        BeanExemplo bean1 = new BeanExemplo();
+        BeanExemplo bean2 = new BeanExemplo();
+        BeanExemplo bean3 = new BeanExemplo();
+
+        getEntidadesListadas().add(bean1);
+        getEntidadesListadas().add(bean2);
+        getEntidadesListadas().add(bean3);
+
+    }
 
     public PgComponenteLab() {
         super(
@@ -50,7 +66,7 @@ public class PgComponenteLab extends MB_paginaCadastroEntidades<BeanExemplo> {
 
     @Override
     public void listarDados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }

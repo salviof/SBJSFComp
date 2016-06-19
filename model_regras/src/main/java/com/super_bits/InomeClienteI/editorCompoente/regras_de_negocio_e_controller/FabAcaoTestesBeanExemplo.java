@@ -27,32 +27,33 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     //
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-gears", precisaPermissao = false,
             nomeAcao = "Bean Exemplo Gerenciar",
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/demonstracaoLayout.xhtml")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/gerenciar.xhtml")
+
     beanExempplo_MB_gerenciar,
     //
     @InfoTipoAcaoFormulario(campos = {"[separador:DadosUsuario 6 campos]", "nome", "cpf", "email", "telefone", "apelido", "senha",
         "[separador:DadosEmpresa 5 campos]", "cnpj", "inscricaoEstadual", "inscricaoMunicipal", "site", "telefone",
         "[separador:DadosMix 4 campos]", "nome", "telefone", "id", "cpf",
         "[separador:DadosMix 3 campos]", "email", "inscricaoMunicipal", "telefone"},
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml", icone = "fa fa-edit")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml", icone = "fa fa-edit")
     beanExemplo_FRM_NOVO_Teste,
     //
     @InfoTipoAcaoFormulario(icone = "fa fa-edit")
     beanExemplo_FRM_teste2FormMuiltiplasEntidades,
     //
     @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-list",
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/listar.xhtml")
     beanExemplo_FRM_LISTAR_Teste,
     //
-    @InfoTipoAcaoController(icone = "fa fa-save")
+    @InfoTipoAcaoController(icone = "fa fa-save", nomeAcao = "Salvar")
     beanExemplo_CTR_SALVAR_Test,
     //
     @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-eyes",
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
     beanExemplo_FRM_VISUALIZAR_Test,
     //
     @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-edit",
-            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/formularioCampos.xhtml")
+            xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
     beanExemplo_FRM_EDITAR_Test;
 
     @Override
