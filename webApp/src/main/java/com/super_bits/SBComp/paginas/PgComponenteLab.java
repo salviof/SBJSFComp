@@ -5,21 +5,14 @@
  */
 package com.super_bits.SBComp.paginas;
 
-import com.google.common.collect.Lists;
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.editorComponente.InfoAcaoTestesBeanExemplo;
-import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
-import com.super_bits.modulos.SBAcessosModel.fabricas.InfoAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
-import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.InfoAcoesPaginaDoSistema;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ViewScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -28,7 +21,7 @@ import javax.inject.Named;
  */
 @InfoAcaoTestesBeanExemplo(acao = FabAcaoTestesBeanExemplo.beanExempplo_MB_gerenciar)
 @Named
-@ViewScoped
+@SessionScoped
 @InfoPagina(nomeCurto = "LC", tags = "Laboratorio de Componentes")
 public class PgComponenteLab extends MB_paginaCadastroEntidades<BeanExemplo> {
 

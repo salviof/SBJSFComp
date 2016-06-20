@@ -29,105 +29,105 @@ import javax.validation.constraints.NotNull;
 public class BeanExemplo
         extends EntidadeContatoCorporativo {
 
-    @InfoCampo(tipo = FabCampos.ID)
+    @InfoCampo(tipo = FabCampos.ID, label = "ID")
     @NotNull
     private int id;
 
-    @InfoCampo(tipo = FabCampos.EMAIL)
+    @InfoCampo(tipo = FabCampos.EMAIL, label = "Email")
     @NotNull
     private String email = "emailteste@teste.com";
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL)
+    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
     private String telefone = "313017-7334";
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_CELULAR)
+    @InfoCampo(tipo = FabCampos.TELEFONE_CELULAR, label = "Celular")
     @NotNull
     private String celular;
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_INTERNACIONAL)
+    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_INTERNACIONAL, label = "Tel Internacional")
     @NotNull
     private String telInternacional;
 
-    @InfoCampo(tipo = FabCampos.CPF)
+    @InfoCampo(tipo = FabCampos.CPF, label = "CPF")
     @NotNull
     private String cpf;
 
-    @InfoCampo(tipo = FabCampos.CNPJ)
+    @InfoCampo(tipo = FabCampos.CNPJ, label = "CNPJ")
     @NotNull
     private String cnpj;
 
-    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL)
+    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Insc. Estadual")
     @NotNull
     private String inscricaoEstadual;
 
-    @InfoCampo(tipo = FabCampos.INSCRIACAO_MUNICIPAL)
+    @InfoCampo(tipo = FabCampos.INSCRIACAO_MUNICIPAL, label = "Insc. Municipal")
     @NotNull
     private String inscricaoMunicipal;
 
-    @InfoCampo(tipo = FabCampos.COR)
+    @InfoCampo(tipo = FabCampos.COR, label = "Cor")
     @NotNull
     private String cor;
 
-    @InfoCampo(Mask = "")
+    @InfoCampo(Mask = "", label = "Mascara Esp.")
     @NotNull
     private String MascaraEspecial;
 
-    @InfoCampo(tipo = FabCampos.HTML)
+    @InfoCampo(tipo = FabCampos.HTML, label = "Html")
     @NotNull
     private String HTML;
 
-    @InfoCampo(tipo = FabCampos.SITE, obrigatorio = true)
+    @InfoCampo(tipo = FabCampos.SITE, obrigatorio = true, label = "Site")
     @NotNull
     private String site;
 
-    @InfoCampo(tipo = FabCampos.URL)
+    @InfoCampo(tipo = FabCampos.URL, label = "Url")
     private String url;
 
-    @InfoCampo(tipo = FabCampos.SENHA)
+    @InfoCampo(tipo = FabCampos.SENHA, label = "Senha")
     @NotNull
     private String senha;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.QUANTIDADE)
+    @InfoCampo(tipo = FabCampos.QUANTIDADE, label = "Quantidade")
     private int quantidade;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.PERCENTUAL)
+    @InfoCampo(tipo = FabCampos.PERCENTUAL, label = "Percentual")
     private int porcentagem;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.MOEDA_REAL)
+    @InfoCampo(tipo = FabCampos.MOEDA_REAL, label = "Dinheiro")
     private Double dinheiro;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.REG_DATAALTERACAO)
+    @InfoCampo(tipo = FabCampos.REG_DATAALTERACAO, label = "Data Alteração")
     private Date dataAlteracao;
 
-    @InfoCampo(tipo = FabCampos.AAA_NOME)
+    @InfoCampo(tipo = FabCampos.AAA_NOME, label = "Apelido")
     private String apelido;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO)
+    @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO, label = "Nome")
     private String nome;
 
-    @InfoCampo(tipo = FabCampos.LCComplemeto)
+    @InfoCampo(tipo = FabCampos.LCComplemeto, label = "Complemento")
     @NotNull
     private String complemento;
 
-    @InfoCampo(tipo = FabCampos.LCCEP, obrigatorio = true)
+    @InfoCampo(tipo = FabCampos.LCCEP, obrigatorio = true, label = "CEP")
     @NotNull
     private String cep;
 
-    @InfoCampo(tipo = FabCampos.DATAHORA)
+    @InfoCampo(tipo = FabCampos.DATAHORA, label = "Data Hora")
     @NotNull
     private String dataHora;
 
-    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE)
+    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo")
     @NotNull
     private String arquivo;
 
-    @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO)
+    @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private Localizacao localizacao;
 

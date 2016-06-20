@@ -48,7 +48,7 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     @InfoTipoAcaoController(icone = "fa fa-save", nomeAcao = "Salvar")
     beanExemplo_CTR_SALVAR_Test,
     //
-    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-eyes",
+    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-eye",
             xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
     beanExemplo_FRM_VISUALIZAR_Test,
     //
