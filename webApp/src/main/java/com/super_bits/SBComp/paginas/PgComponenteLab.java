@@ -12,7 +12,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 /**
@@ -21,7 +21,7 @@ import javax.inject.Named;
  */
 @InfoAcaoTestesBeanExemplo(acao = FabAcaoTestesBeanExemplo.beanExempplo_MB_gerenciar)
 @Named
-@SessionScoped
+@ViewScoped
 @InfoPagina(nomeCurto = "LC", tags = "Laboratorio de Componentes")
 public class PgComponenteLab extends MB_paginaCadastroEntidades<BeanExemplo> {
 

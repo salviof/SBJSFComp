@@ -52,7 +52,7 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
             xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
     beanExemplo_FRM_VISUALIZAR_Test,
     //
-    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-edit",
+    @InfoTipoAcaoFormulario(campos = {"[separador:Dados1]", "nome", "cpf", "email", "telefone", "url", "dinheiro", "[separador:Dados2]", "porcentagem", "cor", "email", "telefone", "dinheiro", "html"}, icone = "fa fa-edit",
             xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
     beanExemplo_FRM_EDITAR_Test;
 

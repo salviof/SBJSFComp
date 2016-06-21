@@ -75,7 +75,7 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabCampos.HTML, label = "Html")
     @NotNull
-    private String HTML;
+    private String html;
 
     @InfoCampo(tipo = FabCampos.SITE, obrigatorio = true, label = "Site")
     @NotNull
@@ -228,12 +228,12 @@ public class BeanExemplo
         this.MascaraEspecial = MascaraEspecial;
     }
 
-    public String getHTML() {
-        return HTML;
+    public String getHtml() {
+        return html;
     }
 
-    public void setHTML(String HTML) {
-        this.HTML = HTML;
+    public void setHtml(String html) {
+        this.html = html;
     }
 
     public String getSite() {
