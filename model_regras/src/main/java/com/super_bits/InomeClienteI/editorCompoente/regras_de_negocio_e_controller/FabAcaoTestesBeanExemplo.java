@@ -65,31 +65,6 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     }
 
     @Override
-    public ItfAcaoEntidade getAcaoDeEntidade() {
-        return (ItfAcaoEntidade) getAcaoDoSistema();
-    }
-
-    @Override
-    public ItfAcaoFormularioEntidade getAcaoEntidadeFormulario() {
-        return (ItfAcaoFormularioEntidade) getAcaoDeEntidade();
-    }
-
-    @Override
-    public ItfAcaoControllerEntidade getAcaoEntidadeController() {
-        return (ItfAcaoControllerEntidade) getAcaoDeEntidade();
-    }
-
-    @Override
-    public ItfAcaoController getAcaoController() {
-        return (ItfAcaoController) getAcaoDeEntidade();
-    }
-
-    @Override
-    public ItfAcaoGerenciarEntidade geAcaoGerenciarEntidade() {
-        return (ItfAcaoGerenciarEntidade) getAcaoDeEntidade();
-    }
-
-    @Override
     public Class getEntidadeDominio() {
         return BeanExemplo.class;
     }
@@ -101,7 +76,7 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
 
     @Override
     public Object getRegistro() {
-        return getAcaoDeEntidade();
+        return getAcaoDoSistema().comoGestaoEntidade();
     }
 
 }

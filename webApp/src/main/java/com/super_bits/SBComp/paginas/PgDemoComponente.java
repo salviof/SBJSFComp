@@ -76,7 +76,7 @@ public class PgDemoComponente extends MB_PaginaConversation {
     @PostConstruct
     public void inicio() {
 
-        acaoFormularioTeste = FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste.getAcaoEntidadeFormulario();
+        acaoFormularioTeste = FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste.getAcaoDoSistema().comoFormularioEntidade();
         registroFormularioTeste = new BeanExemplo();
         listaDeAcaoes2.add(acaoSalvar);
         listaDeAcaoes2.add(acaoExcluir);

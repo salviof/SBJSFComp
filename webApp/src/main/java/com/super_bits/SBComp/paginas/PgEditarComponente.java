@@ -47,8 +47,8 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
             FabAcaoEditorDeComponentes.COMPONENTE_FRM_VISUALIZAR.getAcaoDoSistema(),
             FabAcaoEditorDeComponentes.COMPONENTE_FRM_EDITAR.getAcaoDoSistema()
         },
-                FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO.getAcaoEntidadeFormulario(),
-                FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoEntidadeFormulario(),
+                FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO.getAcaoDoSistema().comoFormularioEntidade(),
+                FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoDoSistema().comoFormularioEntidade(),
                 null,
                 false, true, true, true, false);
         camposDisponiveis = beanExemplo.getCaminhoCampoNivel1();

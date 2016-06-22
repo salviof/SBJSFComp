@@ -45,9 +45,9 @@ public class PgComponenteLab extends MB_paginaCadastroEntidades<BeanExemplo> {
                     ((AcaoDoSistema) FabAcaoTestesBeanExemplo.beanExemplo_FRM_VISUALIZAR_Test.getAcaoDoSistema()),
                     ((AcaoDoSistema) FabAcaoTestesBeanExemplo.beanExemplo_FRM_EDITAR_Test.getAcaoDoSistema())
                 },
-                FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste.getAcaoEntidadeFormulario(),
-                FabAcaoTestesBeanExemplo.beanExemplo_FRM_LISTAR_Teste.getAcaoEntidadeFormulario(),
-                FabAcaoTestesBeanExemplo.beanExemplo_CTR_SALVAR_Test.getAcaoEntidadeController(),
+                FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste.getAcaoDoSistema().comoFormularioEntidade(),
+                FabAcaoTestesBeanExemplo.beanExemplo_FRM_LISTAR_Teste.getAcaoDoSistema().comoFormularioEntidade(),
+                FabAcaoTestesBeanExemplo.beanExemplo_CTR_SALVAR_Test.getAcaoDoSistema().comoControllerEntidade(),
                 false, true, true, true, false
         );
     }

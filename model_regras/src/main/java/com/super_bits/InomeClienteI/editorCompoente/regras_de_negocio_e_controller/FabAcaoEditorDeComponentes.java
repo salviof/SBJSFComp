@@ -43,45 +43,6 @@ public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
     }
 
     @Override
-    public ItfAcaoGerenciarEntidade geAcaoGerenciarEntidade() {
-        try {
-            return (ItfAcaoGerenciarEntidade) getRegistro();
-        } catch (Throwable t) {
-            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "A ação " + this + " não parece ser do tipo ItfAcaoControllerEntidade", t);
-        }
-
-        return null;
-    }
-
-    @Override
-    public ItfAcaoFormularioEntidade getAcaoEntidadeFormulario() {
-        return (ItfAcaoFormularioEntidade) getRegistro();
-    }
-
-    @Override
-    public ItfAcaoControllerEntidade getAcaoEntidadeController() {
-        try {
-            return (ItfAcaoControllerEntidade) getRegistro();
-        } catch (Throwable t) {
-            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "A ação " + this + " não parece ser do tipo ItfAcaoControllerEntidade", t);
-        }
-
-        return null;
-    }
-
-    @Override
-    public ItfAcaoController getAcaoController() {
-        try {
-            return (ItfAcaoController) getRegistro();
-        } catch (Throwable t) {
-            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "A ação " + this + " não parece ser do tipo ItfAcaoControllerEntidade", t);
-        }
-
-        return null;
-
-    }
-
-    @Override
     public Class getEntidadeDominio() {
         return ComponenteVisual.class;
     }
@@ -89,11 +50,6 @@ public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
     @Override
     public String getNomeModulo() {
         return UtilFabricaDeAcoesAcessosModel.getModuloByFabrica(this).getNome();
-    }
-
-    @Override
-    public ItfAcaoEntidade getAcaoDeEntidade() {
-        return (ItfAcaoEntidade) UtilFabricaDeAcoesAcessosModel.getAcaoPrincipalDoDominio(this);
     }
 
     @Override
