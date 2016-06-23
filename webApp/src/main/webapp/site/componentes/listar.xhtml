@@ -11,7 +11,9 @@
     <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
 
         <ui:define name="head"  >
+
             <style>
+
                 .botaoBox {
 
                     margin-top: 3px;
@@ -23,40 +25,7 @@
 
         <ui:define name="divConteudo">
 
-            <h:form>
-                <h:panelGrid columns="2" cellpadding="5">
-                    <p:outputLabel value="Multiple:" for="themes" />
-
-                    <p:autoComplete id="themes" multiple="true" value="#{autoCompleteView.selectedThemes}" completeMethod="#{autoCompleteView.completeTheme}"
-                                    var="theme" itemLabel="#{theme.displayName}" itemValue="#{theme}" converter="themeConverter" forceSelection="true">
-
-                        <p:column style="width:10%">
-
-                            <h:outputText styleClass="ui-theme ui-theme-#{theme.name}" />
-
-                        </p:column>
-
-                        <p:column>
-
-                            <h:outputText value="#{theme.displayName}" />
-
-                        </p:column>
-
-                    </p:autoComplete>
-                </h:panelGrid>
-
-                <p:dialog header="Values" resizable="false" showEffect="fade" widgetVar="dlg">
-                    <p:panelGrid id="output" columns="2" columnClasses="label, value">
-
-                        <h:outputText value="Multiple:" />
-                        <p:dataList value="#{autoCompleteView.selectedThemes}" var="t">
-                            <h:outputText value="#{t}" />
-                        </p:dataList>
-
-                    </p:panelGrid>
-                </p:dialog>
-
-            </h:form>
+            teste
 
         </ui:define>
 

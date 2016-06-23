@@ -156,6 +156,7 @@ public class BeanExemplo
         this.email = email;
     }
 
+    @Override
     public String getTelefone() {
         return telefone;
     }
@@ -236,6 +237,7 @@ public class BeanExemplo
         this.html = html;
     }
 
+    @Override
     public String getSite() {
         return site;
     }
@@ -300,14 +302,17 @@ public class BeanExemplo
         this.apelido = apelido;
     }
 
+    @Override
     public String getNome() {
         return nome;
     }
 
+    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    @Override
     public String getComplemento() {
         return complemento;
     }

@@ -57,7 +57,10 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
         "[separador:Dados2]", "porcentagem", "email", "telefone", "dinheiro",
         "[separador:Dados3]", "porcentagem", "email", "telefone", "dinheiro", "nome", "cpf", "email", "telefone", "url", "dinheiro", "html"},
             icone = "fa fa-edit", xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/editar.xhtml")
-    beanExemplo_FRM_EDITAR_Test;
+    beanExemplo_FRM_EDITAR_Test,
+    //
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/autoCompletador.xhtml", icone = "fa fa-list")
+    beanExemplo_FRM_AUTOCOMPLETE;
 
     @Override
     public ItfAcaoDoSistema getAcaoDoSistema() {
