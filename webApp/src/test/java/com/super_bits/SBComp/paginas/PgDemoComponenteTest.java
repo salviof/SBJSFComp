@@ -6,11 +6,9 @@
 package com.super_bits.SBComp.paginas;
 
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CampoEsperado;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.GrupoCampos;
 import com.super_bits.testes.TestesSBCompSemPersistencia;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *

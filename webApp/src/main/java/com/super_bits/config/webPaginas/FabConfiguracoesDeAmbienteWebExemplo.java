@@ -6,10 +6,13 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.model.config.ConfigPersistenciaInomeProjetoI;
+import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
+import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
+import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfigCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ControleDeSessaoPadrao;
@@ -51,7 +54,9 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
         cfg.setCentralMEnsagens(CentralDeMensagensJSFAPP.class);
         cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
-        cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class, FabAcaoAcessoRestritoExemplo.class, FabAcaoTestesBeanExemplo.class});
+        cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class,
+            FabAcaoAcessoRestritoExemplo.class, FabAcaoTestesBeanExemplo.class, FabAcaoEditorDeComponentes.class, FabAcaoDemonstracaoSB.class, FabAcaoProjetoSB.class
+        });
         cfg.setClasseConfigPermissao(ConfigAcessos.class);
 
         switch (this) {

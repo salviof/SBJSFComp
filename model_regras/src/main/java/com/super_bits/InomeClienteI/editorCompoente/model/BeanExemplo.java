@@ -71,7 +71,7 @@ public class BeanExemplo
 
     @InfoCampo(Mask = "", label = "Mascara Esp.")
     @NotNull
-    private String MascaraEspecial;
+    private String mascaraEspecial;
 
     @InfoCampo(tipo = FabCampos.HTML, label = "Html")
     @NotNull
@@ -222,11 +222,11 @@ public class BeanExemplo
     }
 
     public String getMascaraEspecial() {
-        return MascaraEspecial;
+        return mascaraEspecial;
     }
 
-    public void setMascaraEspecial(String MascaraEspecial) {
-        this.MascaraEspecial = MascaraEspecial;
+    public void setMascaraEspecial(String mascaraEspecial) {
+        this.mascaraEspecial = mascaraEspecial;
     }
 
     public String getHtml() {

@@ -75,7 +75,7 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
 
     @Override
     public Object getRegistro() {
-        return getAcaoDoSistema().comoGestaoEntidade();
+        return getAcaoDoSistema().getComoGestaoEntidade();
     }
 
 }

@@ -17,6 +17,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -47,11 +48,16 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
             FabAcaoEditorDeComponentes.COMPONENTE_FRM_VISUALIZAR.getAcaoDoSistema(),
             FabAcaoEditorDeComponentes.COMPONENTE_FRM_EDITAR.getAcaoDoSistema()
         },
-                FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO.getAcaoDoSistema().comoFormularioEntidade(),
-                FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoDoSistema().comoFormularioEntidade(),
+                FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO.getAcaoDoSistema().getComoFormularioEntidade(),
+                FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoDoSistema().getComoFormularioEntidade(),
                 null,
                 false, true, true, true, false);
-        camposDisponiveis = beanExemplo.getCaminhoCampoNivel1();
+
+        Field[] campos = BeanExemplo.class.getDeclaredFields();
+        camposDisponiveis = new ArrayList<>();
+        for (Field cp : campos) {
+            camposDisponiveis.add(new CaminhoCampoReflexao(cp.getName(), BeanExemplo.class));
+        }
 
     }
 
