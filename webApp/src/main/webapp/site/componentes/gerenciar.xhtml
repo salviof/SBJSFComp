@@ -12,7 +12,6 @@
 
 
     <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
-
         <ui:define name="head"  >
             <style>
                 .botaoBox {
@@ -31,14 +30,15 @@
                     <p:panelGrid columns="2">
                         <p:selectOneMenu converter="conversorGenerico"
                                          value="#{pgEditarComponente.campoSelecionado}" >
-                            <f:selectItems value="#{pgEditarComponente.camposDisponiveis}" var="cp" itemValue="#{cp}"   />
+                            <f:selectItems value="#{pgEditarComponente.camposDisponiveis}"
+                                           var="cp"
+                                           itemValue="#{cp}"   />
                         </p:selectOneMenu>
-                        <p:commandButton value="ALTERAR CAMPO INPUT" update="@form"  oncomplete="javascript:location.reload();"/>
+                        <p:commandButton value="ALTERAR CAMPO INPUT"
+                                         update="@form"
+                                         oncomplete="javascript:location.reload();"/>
                     </p:panelGrid>
                 </h:form>
-
-
-
 
                 <SBComp:debugCampo registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"/>
                 <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
