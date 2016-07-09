@@ -11,6 +11,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.NotNull;
@@ -139,15 +140,29 @@ public class BeanExemplo
     )
     private BeanExemplo beanSelecionadoDaListaFixa;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP,)
+    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = {FabBeanExemplo.class}
+    )
+    private BeanExemplo beanSelecionadoDaListaFabrica;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "listasExemplo")
     private BeanExemplo benSelecionadoListaPorCampo;
 
-    private BeanExemplo listaSelecionadaListaTodos;
-
-    private List<BeanExemplo> listasExemplo;
+    private final List<BeanExemplo> listasExemplo;
 
     public BeanExemplo() {
         super(BeanExemplo.class);
+        BeanExemplo exemplo1 = new BeanExemplo();
+        exemplo1.setNome("Bean Lista 1");
+        exemplo1.setId(1);
+        exemplo1.setEmail("teste@teste.com");
+
+        BeanExemplo exemplo2 = new BeanExemplo();
+        exemplo2.setNome("Bean Lista 1");
+        exemplo2.setId(1);
+        exemplo2.setEmail("teste@teste.com");
+        listasExemplo = new ArrayList<>();
+
+        listasExemplo.add(exemplo1);
 
         apelido = "testeeeeeeee";
 
