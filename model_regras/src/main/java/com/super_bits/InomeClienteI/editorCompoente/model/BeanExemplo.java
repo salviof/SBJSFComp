@@ -138,13 +138,12 @@ public class BeanExemplo
         @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
-    private BeanExemplo beanSelecionadoDaListaFixa;
+    private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = {FabBeanExemplo.class}
-    )
+    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = FabBeanExemplo.class)
     private BeanExemplo beanSelecionadoDaListaFabrica;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "listasExemplo")
+    @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private final List<BeanExemplo> listasExemplo;
