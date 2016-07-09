@@ -9,8 +9,10 @@ import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeContat
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoClasse;
+import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import java.util.Date;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -130,6 +132,19 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private Localizacao localizacao;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP, valoresAceitos = {
+        @ValorAceito(valor = "Teste"),
+        @ValorAceito(valor = "Teste2")}
+    )
+    private BeanExemplo beanSelecionadoDaListaFixa;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP,)
+    private BeanExemplo benSelecionadoListaPorCampo;
+
+    private BeanExemplo listaSelecionadaListaTodos;
+
+    private List<BeanExemplo> listasExemplo;
 
     public BeanExemplo() {
         super(BeanExemplo.class);
