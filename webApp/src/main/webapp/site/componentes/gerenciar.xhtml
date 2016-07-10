@@ -38,7 +38,6 @@
                         </p:selectOneMenu>
                         <p:commandButton value="ALTERAR CAMPO INPUT" update="@form"  oncomplete="javascript:location.reload();"/>
                     </p:panelGrid>
-
                 </h:form>
 
 
@@ -71,29 +70,11 @@
                         </p:panelGrid>
                     </h:form>
                 </p:panel>
+                <p:spacer/>
+                ASDASD
+                <SBComp:debugCampo registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"/>
+                <p:spacer/>
 
-                <p:panel header="Informações do campo:">
-                    <p:panelGrid columns="2">
-                        <p:outputLabel value="msk jqry"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascaraJqueryMode}
-                        <p:outputLabel value="Label"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).label}
-                        <p:outputLabel value="Validação regex:"/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).validacaoRegex}
-                        <p:outputLabel value="é uma lista de opções? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).listaDeOpcoes}
-                        <p:outputLabel value="é uma mascara? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).mascara}
-                        <p:outputLabel value="é um numeral? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeral}
-                        <p:outputLabel value="numero de casas decimais "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).numeroDeCasasDecimais}
-                        <p:outputLabel value="é do tipo moeda? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).moeda}
-                        <p:outputLabel value="é obrigatorio? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).obrigatorio}
-                        <p:outputLabel value="tem mascara? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temMascara}
-                        <p:outputLabel value="tem validação maximo? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMaximo}
-                        <p:outputLabel value="tem validação minimo? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoMinimo}
-                        <p:outputLabel value="tem validação regex? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).temValidacaoRegex}
-                        <p:outputLabel value="qual valor? "/>-- #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse).valor}
-
-                    </p:panelGrid>
-
-                </p:panel>
-                <p:spacer/><p:spacer/>
-                #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}
 
 
                 <p:panel header="LABORATÓRIO" >
