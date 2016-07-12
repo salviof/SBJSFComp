@@ -149,21 +149,35 @@ public class BeanExemplo
     private final List<BeanExemplo> listasExemplo;
 
     public BeanExemplo() {
-        super(BeanExemplo.class);
-        BeanExemplo exemplo1 = new BeanExemplo();
-        exemplo1.setNome("Bean Lista 1");
-        exemplo1.setId(1);
-        exemplo1.setEmail("teste@teste.com");
+        this(true);
 
-        BeanExemplo exemplo2 = new BeanExemplo();
-        exemplo2.setNome("Bean Lista 1");
-        exemplo2.setId(1);
-        exemplo2.setEmail("teste@teste.com");
-        listasExemplo = new ArrayList<>();
+    }
 
-        listasExemplo.add(exemplo1);
+    /**
+     *
+     * @param pCriarLista
+     */
+    public BeanExemplo(boolean pCriarLista) {
+        super();
+        if (!pCriarLista) {
+            listasExemplo = null;
+        } else {
+            BeanExemplo exemplo1 = new BeanExemplo(false);
+            exemplo1.setNome("Bean Lista 1");
+            exemplo1.setId(1);
+            exemplo1.setEmail("teste@teste.com");
 
-        apelido = "testeeeeeeee";
+            BeanExemplo exemplo2 = new BeanExemplo(false);
+            exemplo2.setNome("Bean Lista 1");
+            exemplo2.setId(1);
+            exemplo2.setEmail("teste@teste.com");
+            listasExemplo = new ArrayList<>();
+
+            listasExemplo.add(exemplo1);
+
+            apelido = "testeeeeeeee";
+
+        }
 
     }
 
