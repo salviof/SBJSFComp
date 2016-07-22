@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
+        <ui:define name="head"  >
+            <style>
+                .botaoBox {
+
+                    margin-top: 3px;
+                }
+            </style>
+
+
+        </ui:define>
+
+        <ui:define name="divConteudo">
+            <h:panelGroup id="exbicaoDeComponentes">
+
+                <h:form>
+                    <p:panelGrid columns="2">
+                        <p:selectOneMenu converter="conversorGenerico"
+                                         value="#{pgEditarComponente.campoSelecionado}" >
+                            <f:selectItems value="#{pgEditarComponente.camposDisponiveis}"
+                                           var="cp"
+                                           itemValue="#{cp}"   />
+                        </p:selectOneMenu>
+                        <p:commandButton value="ALTERAR CAMPO INPUT"
+                                         update="@form"
+                                         oncomplete="javascript:location.reload();"/>
+                    </p:panelGrid>
+                </h:form>
+
+                <SBComp:debugCampo registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"/>
+                <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+                <p:spacer/>
+
+
+
+
+
+            </h:panelGroup>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <SBComp:infoPagina />
+
+
+        </ui:define>
+    </ui:composition>
+</html>
+
+
+
+
+
+
+
+
+
+

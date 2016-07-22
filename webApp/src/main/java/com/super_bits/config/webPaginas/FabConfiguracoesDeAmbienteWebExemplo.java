@@ -9,6 +9,7 @@ import com.super_bits.InomeClienteI.editorCompoente.model.config.ConfigPersisten
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
+import com.super_bits.SBComp.controller.FabAcaoTestesDeAcoes;
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
@@ -55,7 +56,10 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
         cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
         cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class,
-            FabAcaoAcessoRestritoExemplo.class, FabAcaoTestesBeanExemplo.class, FabAcaoEditorDeComponentes.class, FabAcaoDemonstracaoSB.class, FabAcaoProjetoSB.class
+            FabAcaoAcessoRestritoExemplo.class, FabAcaoTestesBeanExemplo.class,
+            FabAcaoEditorDeComponentes.class, FabAcaoDemonstracaoSB.class,
+            FabAcaoProjetoSB.class,
+            FabAcaoTestesDeAcoes.class
         });
         cfg.setClasseConfigPermissao(ConfigAcessos.class);
 
