@@ -24,30 +24,39 @@
         </ui:define>
 
         <ui:define name="divConteudo">
-            <h:panelGroup id="exbicaoDeComponentes">
 
-                <h:form>
-                    <p:panelGrid columns="2">
-                        <p:selectOneMenu converter="conversorGenerico"
-                                         value="#{pgEditarComponente.campoSelecionado}" >
-                            <f:selectItems value="#{pgEditarComponente.camposDisponiveis}"
-                                           var="cp"
-                                           itemValue="#{cp}"   />
-                        </p:selectOneMenu>
-                        <p:commandButton value="ALTERAR CAMPO INPUT"
-                                         update="@form"
-                                         oncomplete="javascript:location.reload();"/>
-                    </p:panelGrid>
-                </h:form>
 
-                <SBComp:debugCampo registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"/>
-                <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-                <p:spacer/>
+            <h:form >
+                <p:panel header="Selecione uma ação para visualizar, e clique no tipo de teste que deseja utilizar">
+                    <SBComp:seletorItem TIPO_VIEW_COMBO="true"
+                                        lista="#{pgBotaoDeAcaoLab.acoesParaBotoes}"
+                                        registro="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                        /> <br/>
+                    <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
+                        <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
+
+
+                    </p:selectOneMenu>
 
 
 
+                    <c:forEach items="#{pgBotaoDeAcaoLab.acoesDeExibicao}" var="acao">
+                        <p:commandButton update="@form" value="#{acao.nomeAcao}"
+                                         action="#{pgBotaoDeAcaoLab.executarAcaoSelecionada()}"
+
+                                         >
+                            <f:setPropertyActionListener target="#{pgBotaoDeAcaoLab.acaoSelecionada}" value="#{acao}" />
+                        </p:commandButton>
+                    </c:forEach>
 
 
+
+                </p:panel>
+
+            </h:form>
+            <h:panelGroup id="#{pgBotaoDeAcaoLab.idAreaExbicaoAcaoSelecionada}" >
+                #{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}
+                <ui:include src="#{pgBotaoDeAcaoLab.xhtmlAcaoAtual}" />
             </h:panelGroup>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <SBComp:infoPagina />

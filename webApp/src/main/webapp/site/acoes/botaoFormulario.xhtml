@@ -1,74 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-
-      xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    >
 
 
-    <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
 
-        <ui:define name="head"  >
-            <style>
-                .botaoBox {
+    <ui:composition template="/resources/SBComp/template/basico/conteudoEmBranco.xhtml"  >
 
-                    margin-top: 3px;
-                }
-            </style>
+
+        <ui:define name="conteudo">
+
+            formulario
+
+            <p:fieldset legend="Teste ação com armazenamento" >
+                <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                    armazenarAcaoSelecionada="#{false}"
+                                    tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                    />
+            </p:fieldset>
+
+            <p:fieldset legend="Teste ação sem armazenamento" >
+                <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                    armazenarAcaoSelecionada="#{false}"
+                                    tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                    />
+            </p:fieldset>
+
+            <p:fieldset legend="Teste ação com Javascript no final" >
+                <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                    armazenarAcaoSelecionada="#{false}"
+                                    tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                    />
+            </p:fieldset>
+
+            <p:fieldset legend="Teste ação com armazenamento ---------" >
+                <h:form>
+                    <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                        armazenamentoAcaoExecutada="#{pgBotaoDeAcaoLab.acaoArmazenadaTeste}"
+                                        tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                        metodo="#{pgBotaoDeAcaoLab.metodoTeste()}"
+                                        update="@form"
+                                        armazenarAcaoSelecionada="#{true}"
+                                        />
+                </h:form>
+            </p:fieldset>
+            <p:fieldset legend="Teste ação sem metodo" >
+                <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                    armazenarAcaoSelecionada="#{false}"
+                                    tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+
+
+                                    />
+            </p:fieldset>
+
+
+
 
 
         </ui:define>
 
-        <ui:define name="divConteudo">
 
-
-
-
-            <p:panel  >
-                <h:form>
-                    <p:panelGrid columns="2">
-                        <SBComp:input  tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelSuperior}"
-                                       registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-                        <p:commandButton value="Validar"
-                                         update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
-                    </p:panelGrid>
-                </h:form>
-
-
-
-                <h:form>
-                    <p:panelGrid columns="2">
-                        <SBComp:input   tipoExibicaoCampo="#{tipos.tipoVisualCampo.resumido}"
-                                        registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-                        <p:commandButton value="Validar" update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"  />
-                    </p:panelGrid>
-
-                </h:form>
-
-                <h:form>
-                    <p:panelGrid columns="2">
-                        <SBComp:input tipoExibicaoCampo="#{tipos.tipoVisualCampo.labelEsquerda}"
-                                      registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
-                        <p:commandButton value="Validar"  update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"   />
-                    </p:panelGrid>
-                </h:form>
-            </p:panel>
-            <p:spacer/>
-
-
-        </ui:define>
     </ui:composition>
+
+
+
 </html>
-
-
-
-
-
-
-
-
-
 

@@ -23,5 +23,5 @@ public @interface InfoAcaoTestesDeAcao {
 
     public boolean padraoBloqueado() default true;
 
-    public FabAcaoTestesDeAcoes acao();
+    public FabAcaoTestesBotaoDeAcao acao();
 }
