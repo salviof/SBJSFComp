@@ -12,7 +12,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.registro.ItemNormal;
  *
  * @author desenvolvedor
  */
-@InfoClasse(tags = "Componente Visual")
+@InfoClasse(tags = "Componente Visual", plural = "Componentes Visuais")
 public class ComponenteVisual extends ItemNormal {
 
     public ComponenteVisual() {

@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  *
  */
-@InfoClasse(tags = {"Objeto Exemplo"})
+@InfoClasse(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
 public class BeanExemplo
         extends EntidadeContatoCorporativo {
 
