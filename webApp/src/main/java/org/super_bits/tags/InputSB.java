@@ -5,10 +5,12 @@
  */
 package org.super_bits.tags;
 
+import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
+import javax.faces.application.ResourceDependencies;
+import javax.faces.application.ResourceDependency;
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.component.UINamingContainer;
-import javax.faces.component.UIPanel;
 import javax.faces.context.FacesContext;
 import org.primefaces.component.api.Widget;
 
@@ -16,11 +18,21 @@ import org.primefaces.component.api.Widget;
  *
  * @author salvioF
  */
-@FacesComponent("testeTagOnChange")
-public class TesteTagOnchangeComponent extends UIComponentBase implements Widget {
+@FacesComponent(InputSB.CLASSE_DO_COMPONENTE)
+@ResourceDependencies({
+    @ResourceDependency(library = "primefaces", name = "jquery/jquery.js"),
+    @ResourceDependency(library = "primefaces", name = "primefaces.js"),
+    @ResourceDependency(library = "SBtagLib", name = "inputTeste.js")})
+public class InputSB extends UIComponentBase implements Widget {
 
-    public static final String CLASSE_DO_COMPONENTE = "org.super_bits.tags.TesteTagOnchangeComponent";
+    public static final String CLASSE_DO_COMPONENTE = "org.super_bits.tags.InputSB";
     public static final String FAMILIA_DO_COMPONENTE = "org.super_bits.tags.componentes";
+
+    public ItfCampoInstanciado campoInstanciado;
+
+    public ItfCampoInstanciado getCampoInstanciado() {
+        return campoInstanciado;
+    }
 
     @Override
     public String getFamily() {
