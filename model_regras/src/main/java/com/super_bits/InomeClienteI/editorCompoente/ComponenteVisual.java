@@ -16,7 +16,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.registro.ItemNormal;
 public class ComponenteVisual extends ItemNormal {
 
     public ComponenteVisual() {
-        super(ComponenteVisual.class);
+        super();
     }
 
     private int id;

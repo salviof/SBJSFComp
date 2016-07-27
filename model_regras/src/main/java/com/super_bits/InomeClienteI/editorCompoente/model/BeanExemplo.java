@@ -5,12 +5,13 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.model;
 
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeContatoCorporativo;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
+import com.super_bits.modulosSB.SBCore.InfoCampos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +31,7 @@ import javax.validation.constraints.NotNull;
  */
 @InfoClasse(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
 public class BeanExemplo
-        extends EntidadeContatoCorporativo {
+        extends ItemContatoCorporativo {
 
     @InfoCampo(tipo = FabCampos.ID, label = "ID")
     @NotNull
@@ -140,7 +141,7 @@ public class BeanExemplo
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = FabBeanExemplo.class)
+    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
     private BeanExemplo beanSelecionadoDaListaFabrica;
 
     @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "filiaisFornecedor")

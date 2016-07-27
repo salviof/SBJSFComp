@@ -22,16 +22,16 @@ and open the template in the editor.
 
         <ui:define name="conteudo">
 
-            formulario
 
-            <p:fieldset legend="Teste ação com armazenamento" >
+            <p:fieldset legend="Teste ação COMMMMM armazenamento" >
                 <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
                                     armazenamentoAcaoExecutada="#{pgBotaoDeAcaoLab.acaoArmazenadaTeste}"
                                     tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+
                                     />
             </p:fieldset>
 
-            <p:fieldset legend="Teste ação sem armazenamento" >
+            <p:fieldset legend="Teste ação SEMMMM armazenamento" >
                 <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
                                     tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
                                     />
@@ -44,26 +44,19 @@ and open the template in the editor.
                                     />
             </p:fieldset>
 
-            <p:fieldset legend="Teste ação com armazenamento ---------" >
-                <h:form>
-                    <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
-                                        armazenamentoAcaoExecutada="#{pgBotaoDeAcaoLab.acaoArmazenadaTeste}"
-                                        tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
-                                        metodo="#{pgBotaoDeAcaoLab.metodoTeste()}"
-                                        update="@form"
-                                        armazenarAcaoSelecionada="#{true}"
-                                        />
-                </h:form>
-            </p:fieldset>
+
             <p:fieldset legend="Teste ação sem metodo" >
                 <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
-                                    armazenarAcaoSelecionada="#{false}"
                                     tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
-
-
                                     />
             </p:fieldset>
 
+            <p:fieldset legend="Teste ação com metodo denovo" >
+                <SBComp:botaoDeAcao acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                    tipoVisualizacao="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                    armazenamentoAcaoExecutada="#{pgBotaoDeAcaoLab.acaoArmazenadaTeste}"
+                                    />
+            </p:fieldset>
 
 
 

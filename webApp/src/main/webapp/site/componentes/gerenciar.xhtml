@@ -42,6 +42,11 @@
 
                 <SBComp:debugCampo registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"/>
                 <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}" />
+
+
+                <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgEditarComponente.campoSelecionado.caminhoSemNomeClasse)}"
+                              metodoExecutarAoAlterarValor="#{pgEditarComponente.executarAcaoSelecionada()}"
+                              />
                 <p:spacer/>
 
 
