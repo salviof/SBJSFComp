@@ -149,6 +149,8 @@ public class BeanExemplo
 
     private final List<BeanExemplo> listasExemplo;
 
+    private BeanExemplo beanFilho;
+
     public BeanExemplo() {
         this(true);
 
@@ -173,7 +175,7 @@ public class BeanExemplo
             exemplo2.setId(1);
             exemplo2.setEmail("teste@teste.com");
             listasExemplo = new ArrayList<>();
-
+            beanFilho = new BeanExemplo(false);
             listasExemplo.add(exemplo1);
 
             apelido = "testeeeeeeee";
@@ -395,6 +397,10 @@ public class BeanExemplo
 
     public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public BeanExemplo getBeanFilho() {
+        return beanFilho;
     }
 
 }

@@ -36,19 +36,24 @@ public class BeanExemploTest extends TesteJunit {
 
             ItfCampoInstanciado testeCampoCOR = exemplo.getCampoInstanciadoByAnotacao(FabCampos.COR);
             System.out.println(testeCampoCOR.getTipoCampo());
-
             ItfCampoInstanciado testeCampoCNPj1 = exemplo.getCampoByNomeOuAnotacao("cnpj");
-
             System.out.println("Mascara=" + testeCampoCNPj1.getMascara());
             ItfCampoInstanciado testeCampoCNPj = exemplo.getCampoInstanciadoByAnotacao(FabCampos.CNPJ);
-
             System.out.println("Mascara=" + testeCampoCNPj.getMascara());
-
             ItfCampoInstanciado testeCampoListaComFabrica = exemplo.getCampoByNomeOuAnotacao("beanSelecionadoDaListaFabrica");
-
             for (ItfBeanSimples teste : testeCampoListaComFabrica.getListaDeOpcoes()) {
                 System.out.println(teste.getNome());
             }
+            ItfCampoInstanciado campoComsequencia = exemplo.getCampoByNomeOuAnotacao("beanFilho.nome");
+
+            System.out.println(campoComsequencia.getNome());
+
+            ItfCampoInstanciado campoDaListaComsequencia = exemplo.getCampoByNomeOuAnotacao("beanFilho.nome");
+
+            ItfCampoInstanciado campoLista = exemplo.getCampoByNomeOuAnotacao("beanSelecionadoDaListaFabrica[0].beanFilho.nome");
+
+            System.out.println(campoComsequencia.getNome());
+
         } catch (Throwable t) {
             lancarErroJUnit(t);
         }
