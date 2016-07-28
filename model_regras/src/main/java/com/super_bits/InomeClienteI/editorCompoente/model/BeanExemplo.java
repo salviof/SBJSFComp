@@ -134,6 +134,8 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private Localizacao localizacao;
+    @NotNull
+    private BeanExemplo beanFilho;
 
     @InfoCampo(tipo = FabCampos.LOOKUP, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
@@ -147,9 +149,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
 
-    private final List<BeanExemplo> listasExemplo;
-
-    private BeanExemplo beanFilho;
+    private List<BeanExemplo> listasExemplo;
 
     public BeanExemplo() {
         this(true);
@@ -401,6 +401,42 @@ public class BeanExemplo
 
     public BeanExemplo getBeanFilho() {
         return beanFilho;
+    }
+
+    public void setListasExemplo(List<BeanExemplo> listasExemplo) {
+        this.listasExemplo = listasExemplo;
+    }
+
+    public List<BeanExemplo> getListasExemplo() {
+        return listasExemplo;
+    }
+
+    public BeanExemplo getBeanSelecionadoDaListaDescritiva() {
+        return beanSelecionadoDaListaDescritiva;
+    }
+
+    public void setBeanSelecionadoDaListaDescritiva(BeanExemplo beanSelecionadoDaListaDescritiva) {
+        this.beanSelecionadoDaListaDescritiva = beanSelecionadoDaListaDescritiva;
+    }
+
+    public BeanExemplo getBeanSelecionadoDaListaFabrica() {
+        return beanSelecionadoDaListaFabrica;
+    }
+
+    public void setBeanSelecionadoDaListaFabrica(BeanExemplo beanSelecionadoDaListaFabrica) {
+        this.beanSelecionadoDaListaFabrica = beanSelecionadoDaListaFabrica;
+    }
+
+    public BeanExemplo getBenSelecionadoListaPorCampo() {
+        return benSelecionadoListaPorCampo;
+    }
+
+    public void setBenSelecionadoListaPorCampo(BeanExemplo benSelecionadoListaPorCampo) {
+        this.benSelecionadoListaPorCampo = benSelecionadoListaPorCampo;
+    }
+
+    public void setBeanFilho(BeanExemplo beanFilho) {
+        this.beanFilho = beanFilho;
     }
 
 }
