@@ -14,6 +14,7 @@ import com.super_bits.SBComp.paginas.PgHomeSBComp;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.PgTestesCampo;
 import com.super_bits.view.menu.ItfFabricaMenu;
 import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
@@ -46,6 +47,8 @@ public class SiteMap extends MB_SiteMapa {
     private PgComponenteLab laboratorioComponentes;
     @Inject
     private PgBotaoDeAcaoLab botaoDeAcaoLab;
+    @Inject
+    private PgTestesCampo testesCampo;
 
     public SiteMap() {
         super();

@@ -19,16 +19,21 @@ import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
 @InfoModuloSBComp(modulo = FabModulosJSFComp.DEMONSTRACAO_ACESSO_RESTRITO)
 public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
-    @InfoTipoAcaoGestaoEntidade(icone = "fa fa-paint-brush", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
+    @InfoTipoAcaoGestaoEntidade(nomeAcao = "Componentes", icone = "fa fa-th-large", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
     COMPONENTE_MB_GERENCIAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/editar.xhtml")
-    COMPONENTE_FRM_EDITAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/listar.xhtml")
+    @InfoTipoAcaoFormulario(icone = "fa fa-th-large", xhtmlDaAcao = "/site/componentes/listar.xhtml", nomeAcao = "Listar Componentes")
     COMPONENTE_FRM_LISTAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/novo.xhtml")
+    @InfoTipoAcaoFormulario(icone = "fa fa-pencil-square-o", nomeAcao = "Editar Componente", xhtmlDaAcao = "/site/componentes/editar.xhtml")
+    COMPONENTE_FRM_EDITAR,
+    @InfoTipoAcaoFormulario(icone = "fa fa-plus ", nomeAcao = "Novo Componente", xhtmlDaAcao = "/site/componentes/novo.xhtml")
     COMPONENTE_FRM_NOVO,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
-    COMPONENTE_FRM_VISUALIZAR;
+    @InfoTipoAcaoFormulario(icone = "fa fa-eye", xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
+    COMPONENTE_FRM_VISUALIZAR,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/inputs.xhtml", icone = "fa fa-pencil-square-o", nomeAcao = "Campos tipo Input")
+    COMPONENTE_FRM_INPUTS,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/todosInputs.xhtml",
+            icone = "fa fa-bars", nomeAcao = "Campos tipo Input")
+    COMPONENTE_FRM_TODOS_INPUTS;
 
     @Override
     public AcaoDoSistema getAcaoDoSistema() {

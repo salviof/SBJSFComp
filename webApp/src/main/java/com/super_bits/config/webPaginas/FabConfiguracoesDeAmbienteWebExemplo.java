@@ -23,6 +23,7 @@ import com.super_bits.modulosSB.SBCore.Mensagens.CentramMensagemProgramadorMsgSt
 import com.super_bits.modulosSB.SBCore.TratamentoDeErros.ErroSBCoreDeveloperSopMessagem;
 import com.super_bits.modulosSB.SBCore.logeventos.CentralLogEventosArqTextoGenerica;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfConfigWebPagina;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcoesPaginasDoSistema;
 import com.super_bits.modulosSB.webPaginas.util.CentralDeMensagensJSFAPP;
 
 /**
@@ -56,10 +57,14 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
         cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
         cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class,
-            FabAcaoAcessoRestritoExemplo.class, FabAcaoTestesBeanExemplo.class,
-            FabAcaoEditorDeComponentes.class, FabAcaoDemonstracaoSB.class,
+            FabAcaoAcessoRestritoExemplo.class,
+            FabAcaoTestesBeanExemplo.class,
+            FabAcaoEditorDeComponentes.class,
+            FabAcaoDemonstracaoSB.class,
             FabAcaoProjetoSB.class,
-            FabAcaoTestesBotaoDeAcao.class
+            FabAcaoTestesBotaoDeAcao.class,
+            FabAcoesPaginasDoSistema.class,
+            FabAcaoDemonstracaoSB.class
         });
         cfg.setClasseConfigPermissao(ConfigAcessos.class);
 

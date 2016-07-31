@@ -5,12 +5,14 @@
  */
 package com.super_bits.SBComp.paginas;
 
+import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.Controller.Interfaces.acoes.ItfAcaoSecundaria;
 import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
+import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.InfoAcaoEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.lang.reflect.Field;
@@ -18,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
-
 import javax.inject.Named;
 
 /**
@@ -36,8 +37,9 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
     private List<String> componentesExistentes;
 
     private CaminhoCampoReflexao campoSelecionado;
-    private List<CaminhoCampoReflexao> camposDisponiveis;
+    private final List<CaminhoCampoReflexao> camposDisponiveis;
     private final BeanExemplo beanExemplo = new BeanExemplo();
+    private final List<ItfAcaoSecundaria> acoesDisponiveis;
 
     public PgEditarComponente() {
         super(new AcaoDoSistema[]{
@@ -51,6 +53,9 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
         Field[] campos = BeanExemplo.class.getDeclaredFields();
         camposDisponiveis = new ArrayList<>();
+
+        acoesDisponiveis = FabAcaoEditorDeComponentes.COMPONENTE_MB_GERENCIAR.getAcaoDoSistema().getComoGestaoEntidade().getAcoesVinculadas();
+
         for (Field cp : campos) {
             camposDisponiveis.add(new CaminhoCampoReflexao(cp.getName(), BeanExemplo.class));
         }
@@ -97,6 +102,15 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     public BeanExemplo getBeanExemplo() {
         return beanExemplo;
+    }
+
+    public List<ItfAcaoSecundaria> getAcoesDisponiveis() {
+        return acoesDisponiveis;
+    }
+
+    @Override
+    public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
+        this.acaoSelecionada = acaoSelecionada;
     }
 
 }
