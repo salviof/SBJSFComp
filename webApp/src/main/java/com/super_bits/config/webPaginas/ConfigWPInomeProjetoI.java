@@ -56,9 +56,4 @@ public class ConfigWPInomeProjetoI implements ItfConfigWebPagina {
         return false;
     }
 
-    @Override
-    public Class inicioFim() {
-        return InicioFimContextoWebPagina.class;
-    }
-
 }
