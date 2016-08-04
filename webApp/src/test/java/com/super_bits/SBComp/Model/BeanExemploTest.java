@@ -12,6 +12,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
+import com.super_bits.view.fabricasCompVisual.FabTipoVisualCampo;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,6 @@ public class BeanExemploTest extends TesteJunit {
     public void setUp() {
     }
 
-    @Test
     public void testSomeMethod() {
         try {
 
@@ -87,6 +87,21 @@ public class BeanExemploTest extends TesteJunit {
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
+    }
+
+    @Test
+    public void testeVisaoXHTML() {
+
+        BeanExemplo teste = new BeanExemplo();
+        System.out.println(FabCampos.LOOKUP.getTipo_input_prime());
+        System.out.println(FabCampos.LOOKUP.getTipo_input_prime().getComponente().getXhtmlJSF());
+        for (ItfCampoInstanciado cpInstanciado : teste.getTodosCamposInstanciados()) {
+            System.out.println(cpInstanciado.getNome());
+            System.out.println(cpInstanciado.getTipoCampo());
+            System.out.println(cpInstanciado.getXhtmlInput());
+            System.out.println(cpInstanciado.getXhtmlDiferenciado(FabTipoVisualCampo.TEXTO_SEM_FORMATACAO.getComponente()));
+        }
+
     }
 
 }
