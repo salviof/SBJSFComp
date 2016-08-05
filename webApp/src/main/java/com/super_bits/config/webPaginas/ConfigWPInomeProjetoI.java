@@ -18,7 +18,7 @@ public class ConfigWPInomeProjetoI implements ItfConfigWebPagina {
 
     @Override
     public String SITE_HOST() {
-        return "http://localhost:8084";
+        return "http://localhost:8080";
     }
 
     @Override
@@ -54,6 +54,11 @@ public class ConfigWPInomeProjetoI implements ItfConfigWebPagina {
     @Override
     public boolean parametroDeAplicacaoEmSubDominio() {
         return false;
+    }
+
+    @Override
+    public Class inicioFim() {
+        return InicioFimContextoWebPagina.class;
     }
 
 }

@@ -19,7 +19,7 @@ import com.super_bits.modulosSB.webPaginas.util.UtilSBWPServletTools;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 
 /**

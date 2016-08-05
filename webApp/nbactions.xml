@@ -11,7 +11,7 @@
                 <goal>package</goal>
             </goals>
             <properties>
-                <netbeans.deploy>true</netbeans.deploy>
+                
                 <skipTests>true</skipTests>
                 <netbeans.deploy.clientUrlPart>/LC/</netbeans.deploy.clientUrlPart>
             </properties>
@@ -41,7 +41,7 @@
             </goals>
             <properties>
                 <netbeans.deploy.debugmode>true</netbeans.deploy.debugmode>
-                <netbeans.deploy>true</netbeans.deploy>
+                
                 <skipTests>true</skipTests>
             </properties>
         </action>

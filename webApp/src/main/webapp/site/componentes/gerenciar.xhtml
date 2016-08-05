@@ -3,10 +3,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:pe="http://primefaces.org/ui/extensions"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:sb="http://superbitsframework/facelets"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
@@ -19,24 +18,51 @@
 
         <ui:define name="divConteudo">
             <h:panelGroup id="exbicaoDeComponentes">
+
+
                 <h:form>
-                    <SBComp:seletorDeAcoes metodo="#{pgEditarComponente.executarAcaoSelecionada()}"
-                                           opcoes="#{pgEditarComponente.acoesDisponiveis}"
-                                           opcaoSelecionada="#{pgEditarComponente.acaoSelecionada}"/>
+                    <br/>
+                    <ui:repeat value="#{pgEditarComponente.acoesDisponiveis}" var="opc" varStatus="rec">
+
+                        <p:commandButton style="margin-bottom: 5px; "
+
+                                         icon="#{opc.iconeAcao}"
+                                         action="#{pgEditarComponente.executarAcaoSelecionada()}"
+                                         process="@form"
+
+                                         >
+                            <f:setPropertyActionListener
+                                target="#{pgEditarComponente.acaoSelecionada}"
+                                value="#{opc}"/>
+
+                        </p:commandButton>
+                    </ui:repeat>
                 </h:form>
+
+
+
+
+
+
                 <p:spacer/>
 
                 <h:panelGroup id="#{pgEditarComponente.idAreaExbicaoAcaoSelecionada}" >
+                    #{pgEditarComponente.xhtmlAcaoAtual}
+                    <ui:include src="#{pgEditarComponente.xhtmlAcaoAtual}"  id="asdasd"  />
+                    #{pgEditarComponente.idAreaExbicaoAcaoSelecionada}
+                    #{pgEditarComponente.xhtmlAcaoAtual}
 
-                    <ui:include src="#{pgEditarComponente.xhtmlAcaoAtual}" />
+
+
+                    <h:form>
+
+                    </h:form>
                 </h:panelGroup>
 
             </h:panelGroup>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <SBComp:infoPagina />
 
-
+            <sb:inputSBTESTEFINAL idTeste="gerenciar"/>
         </ui:define>
     </ui:composition>
 </html>

@@ -5,8 +5,10 @@
  */
 package com.super_bits.SBComp.paginas;
 
+import com.super_bits.config.webPaginas.ConfigWPInomeProjetoI;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.GrupoCampos;
+import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import com.super_bits.testes.TestesSBCompSemPersistencia;
 import org.junit.Test;
 
@@ -19,6 +21,7 @@ public class PgDemoComponenteTest extends TestesSBCompSemPersistencia {
     @Test
     public void testesPagina() {
         PgDemoComponente democomp = new PgDemoComponente();
+        SBWebPaginas.configurar(new ConfigWPInomeProjetoI());
         democomp.inicio();
         for (String arquivo : democomp.getListaFormularios()) {
             System.out.println(arquivo);

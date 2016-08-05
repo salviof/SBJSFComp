@@ -1,11 +1,7 @@
 package com.super_bits.config.webPaginas;
 
-import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.B_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaAtual;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
-import com.super_bits.modulosSB.webPaginas.util.UtilSBWPServletTools;
-import javax.enterprise.inject.Produces;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,8 +13,8 @@ public class PaginaAtual extends MB_PaginaAtual {
     @Inject
     private SiteMap siteMapa;
 
-    @Produces
-    @Named(value = "testee2")
+    //@Produces
+    // @Named(value = "testee2")
     public String getTeste() {
         return "colé doidin";
     }
