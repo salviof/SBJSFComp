@@ -12,7 +12,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
-import com.super_bits.view.fabricasCompVisual.FabTipoVisualCampo;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -98,8 +98,8 @@ public class BeanExemploTest extends TesteJunit {
         for (ItfCampoInstanciado cpInstanciado : teste.getTodosCamposInstanciados()) {
             System.out.println(cpInstanciado.getNome());
             System.out.println(cpInstanciado.getTipoCampo());
-            System.out.println(cpInstanciado.getXhtmlInput());
-            System.out.println(cpInstanciado.getXhtmlDiferenciado(FabTipoVisualCampo.TEXTO_SEM_FORMATACAO.getComponente()));
+            System.out.println(cpInstanciado.getComponenteVisualPadrao().getXhtmlJSF());
+            System.out.println(cpInstanciado.getComponenteDiferenciado(FabCompVisualInputs.TEXTO_SEM_FORMATACAO.getComponente()));
         }
 
     }

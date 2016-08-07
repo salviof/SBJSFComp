@@ -51,4 +51,9 @@ public class ComponenteVisual extends ItemNormal {
         this.xhtml = xhtml;
     }
 
+    @Override
+    public String toString() {
+        return xhtml;
+    }
+
 }
