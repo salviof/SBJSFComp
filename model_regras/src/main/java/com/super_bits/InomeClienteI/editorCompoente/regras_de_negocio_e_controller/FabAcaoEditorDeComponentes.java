@@ -7,10 +7,10 @@ package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_control
 
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
-import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
+import com.super_bits.view.fabricasCompVisual.ComponenteVisualSB;
 
 /**
  *
@@ -42,7 +42,7 @@ public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
     @Override
     public Class getEntidadeDominio() {
-        return ComponenteVisual.class;
+        return ComponenteVisualSB.class;
     }
 
     @Override

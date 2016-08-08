@@ -77,6 +77,7 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
                 break;
             case HOMOLOGACAO:
                 cfg.setEstadoAPP(SBCore.ESTADO_APP.HOMOLOGACAO);
+
                 break;
             case PRODUCAO:
                 cfg.setEstadoAPP(SBCore.ESTADO_APP.PRODUCAO);

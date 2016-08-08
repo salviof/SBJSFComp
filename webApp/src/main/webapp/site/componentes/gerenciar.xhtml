@@ -6,7 +6,6 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:sb="http://superbitsframework/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
@@ -22,13 +21,13 @@
 
                 <h:form>
                     <br/>
+                    Laboratorio de componentes
                     <ui:repeat value="#{pgEditarComponente.acoesDisponiveis}" var="opc" varStatus="rec">
 
                         <p:commandButton style="margin-bottom: 5px; "
 
                                          icon="#{opc.iconeAcao}"
                                          action="#{pgEditarComponente.executarAcaoSelecionada()}"
-                                         process="@form"
 
                                          >
                             <f:setPropertyActionListener
@@ -40,7 +39,16 @@
                 </h:form>
 
 
+                <h:form>
 
+                    <sb:inputSB registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
+                                layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                possuiIDOnChange="#{false}"
+                                possuiMetodoOnChange="#{false}"
+
+                                />
+
+                </h:form>
 
 
 
@@ -54,9 +62,7 @@
 
 
 
-                    <h:form>
 
-                    </h:form>
                 </h:panelGroup>
 
             </h:panelGroup>
