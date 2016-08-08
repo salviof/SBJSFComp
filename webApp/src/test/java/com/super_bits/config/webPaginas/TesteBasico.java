@@ -5,11 +5,7 @@
  */
 package com.super_bits.config.webPaginas;
 
-import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.Persistencia.dao.UtilSBPersistencia;
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeGenerica;
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeNormal;
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.TratamentoDeErros.FabErro;

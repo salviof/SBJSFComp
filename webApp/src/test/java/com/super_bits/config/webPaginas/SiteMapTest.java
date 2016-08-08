@@ -11,8 +11,6 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.util.testes.UtilTestePagina;
-import com.super_bits.modulosSB.webPaginas.controller.servletes.WebPaginasServlet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

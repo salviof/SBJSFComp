@@ -5,14 +5,12 @@
  */
 package org.super_bits.tags;
 
-import java.awt.Color;
 import java.io.IOException;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 import org.primefaces.renderkit.CoreRenderer;
-import org.super_bits.tags.knob.Knob;
 
 /**
  *

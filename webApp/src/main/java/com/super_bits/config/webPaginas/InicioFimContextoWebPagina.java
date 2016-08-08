@@ -5,7 +5,6 @@
  */
 package com.super_bits.config.webPaginas;
 
-import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfInicioFimAppWP;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;

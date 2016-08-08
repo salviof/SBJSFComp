@@ -5,10 +5,8 @@
 package com.super_bits.testes;
 
 import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
-import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
-
 import org.junit.Test;
 
 /**

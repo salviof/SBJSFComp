@@ -3,7 +3,6 @@ package org.super_bits.tags.knob;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
 import javax.faces.component.FacesComponent;
@@ -11,7 +10,6 @@ import javax.faces.component.UIInput;
 import javax.faces.component.UINamingContainer;
 import javax.faces.component.behavior.ClientBehaviorHolder;
 import javax.faces.context.FacesContext;
-
 import org.primefaces.component.api.Widget;
 
 @FacesComponent(value = Knob.COMPONENT_TYPE)
