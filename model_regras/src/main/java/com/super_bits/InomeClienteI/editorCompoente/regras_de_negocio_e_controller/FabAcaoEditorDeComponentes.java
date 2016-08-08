@@ -5,19 +5,12 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoController;
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoGerenciarEntidade;
-import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
-import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.TratamentoDeErros.FabErro;
-import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
+import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
+import com.super_bits.view.fabricasCompVisual.ComponenteVisualSB;
 
 /**
  *
@@ -26,16 +19,21 @@ import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 @InfoModuloSBComp(modulo = FabModulosJSFComp.DEMONSTRACAO_ACESSO_RESTRITO)
 public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
-    @InfoTipoAcaoGestaoEntidade(icone = "fa fa-paint-brush", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
+    @InfoTipoAcaoGestaoEntidade(nomeAcao = "Componentes", icone = "fa fa-th-large", xhtmlDaAcao = "/site/componentes/gerenciar.xhtml")
     COMPONENTE_MB_GERENCIAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/editar.xhtml")
-    COMPONENTE_FRM_EDITAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/listar.xhtml")
+    @InfoTipoAcaoFormulario(icone = "fa fa-th-large", xhtmlDaAcao = "/site/componentes/listar.xhtml", nomeAcao = "Listar Componentes")
     COMPONENTE_FRM_LISTAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/novo.xhtml")
+    @InfoTipoAcaoFormulario(icone = "fa fa-pencil-square-o", nomeAcao = "Editar Componente", xhtmlDaAcao = "/site/componentes/editar.xhtml")
+    COMPONENTE_FRM_EDITAR,
+    @InfoTipoAcaoFormulario(icone = "fa fa-plus ", nomeAcao = "Novo Componente", xhtmlDaAcao = "/site/componentes/novo.xhtml")
     COMPONENTE_FRM_NOVO,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
-    COMPONENTE_FRM_VISUALIZAR;
+    @InfoTipoAcaoFormulario(icone = "fa fa-eye", xhtmlDaAcao = "/site/componentes/visualizar.xhtml")
+    COMPONENTE_FRM_VISUALIZAR,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/inputs.xhtml", icone = "fa fa-pencil-square-o", nomeAcao = "Campos tipo Input")
+    COMPONENTE_FRM_INPUTS,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/componentes/todosInputs.xhtml",
+            icone = "fa fa-bars", nomeAcao = "Campos tipo Input")
+    COMPONENTE_FRM_TODOS_INPUTS;
 
     @Override
     public AcaoDoSistema getAcaoDoSistema() {
@@ -44,7 +42,7 @@ public enum FabAcaoEditorDeComponentes implements ItfFabricaAcoes {
 
     @Override
     public Class getEntidadeDominio() {
-        return ComponenteVisual.class;
+        return ComponenteVisualSB.class;
     }
 
     @Override

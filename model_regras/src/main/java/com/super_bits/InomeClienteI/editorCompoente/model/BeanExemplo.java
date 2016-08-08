@@ -5,12 +5,16 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.model;
 
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeContatoCorporativo;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.InfoClasse;
+import com.super_bits.modulosSB.SBCore.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
+import com.super_bits.modulosSB.SBCore.InfoCampos.registro.ItemContatoCorporativo;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -25,9 +29,9 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  *
  */
-@InfoClasse(tags = {"Objeto Exemplo"})
+@InfoClasse(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
 public class BeanExemplo
-        extends EntidadeContatoCorporativo {
+        extends ItemContatoCorporativo {
 
     @InfoCampo(tipo = FabCampos.ID, label = "ID")
     @NotNull
@@ -71,7 +75,7 @@ public class BeanExemplo
 
     @InfoCampo(Mask = "", label = "Mascara Esp.")
     @NotNull
-    private String MascaraEspecial;
+    private String mascaraEspecial;
 
     @InfoCampo(tipo = FabCampos.HTML, label = "Html")
     @NotNull
@@ -130,11 +134,53 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private Localizacao localizacao;
+    @NotNull
+    private BeanExemplo beanFilho;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP, valoresAceitos = {
+        @ValorAceito(valor = "Teste"),
+        @ValorAceito(valor = "Teste2")}
+    )
+    private BeanExemplo beanSelecionadoDaListaDescritiva;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
+    private BeanExemplo beanSelecionadoDaListaFabrica;
+
+    @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "filiaisFornecedor")
+    private BeanExemplo benSelecionadoListaPorCampo;
+
+    private List<BeanExemplo> listasExemplo;
 
     public BeanExemplo() {
-        super(BeanExemplo.class);
+        this(true);
 
-        apelido = "testeeeeeeee";
+    }
+
+    /**
+     *
+     * @param pCriarLista
+     */
+    public BeanExemplo(boolean pCriarLista) {
+        super();
+        if (!pCriarLista) {
+            listasExemplo = null;
+        } else {
+            BeanExemplo exemplo1 = new BeanExemplo(false);
+            exemplo1.setNome("Bean Lista 1");
+            exemplo1.setId(1);
+            exemplo1.setEmail("teste@teste.com");
+
+            BeanExemplo exemplo2 = new BeanExemplo(false);
+            exemplo2.setNome("Bean Lista 1");
+            exemplo2.setId(1);
+            exemplo2.setEmail("teste@teste.com");
+            listasExemplo = new ArrayList<>();
+            beanFilho = new BeanExemplo(false);
+            listasExemplo.add(exemplo1);
+
+            apelido = "testeeeeeeee";
+
+        }
 
     }
 
@@ -222,11 +268,11 @@ public class BeanExemplo
     }
 
     public String getMascaraEspecial() {
-        return MascaraEspecial;
+        return mascaraEspecial;
     }
 
-    public void setMascaraEspecial(String MascaraEspecial) {
-        this.MascaraEspecial = MascaraEspecial;
+    public void setMascaraEspecial(String mascaraEspecial) {
+        this.mascaraEspecial = mascaraEspecial;
     }
 
     public String getHtml() {
@@ -351,6 +397,46 @@ public class BeanExemplo
 
     public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public BeanExemplo getBeanFilho() {
+        return beanFilho;
+    }
+
+    public void setListasExemplo(List<BeanExemplo> listasExemplo) {
+        this.listasExemplo = listasExemplo;
+    }
+
+    public List<BeanExemplo> getListasExemplo() {
+        return listasExemplo;
+    }
+
+    public BeanExemplo getBeanSelecionadoDaListaDescritiva() {
+        return beanSelecionadoDaListaDescritiva;
+    }
+
+    public void setBeanSelecionadoDaListaDescritiva(BeanExemplo beanSelecionadoDaListaDescritiva) {
+        this.beanSelecionadoDaListaDescritiva = beanSelecionadoDaListaDescritiva;
+    }
+
+    public BeanExemplo getBeanSelecionadoDaListaFabrica() {
+        return beanSelecionadoDaListaFabrica;
+    }
+
+    public void setBeanSelecionadoDaListaFabrica(BeanExemplo beanSelecionadoDaListaFabrica) {
+        this.beanSelecionadoDaListaFabrica = beanSelecionadoDaListaFabrica;
+    }
+
+    public BeanExemplo getBenSelecionadoListaPorCampo() {
+        return benSelecionadoListaPorCampo;
+    }
+
+    public void setBenSelecionadoListaPorCampo(BeanExemplo benSelecionadoListaPorCampo) {
+        this.benSelecionadoListaPorCampo = benSelecionadoListaPorCampo;
+    }
+
+    public void setBeanFilho(BeanExemplo beanFilho) {
+        this.beanFilho = beanFilho;
     }
 
 }

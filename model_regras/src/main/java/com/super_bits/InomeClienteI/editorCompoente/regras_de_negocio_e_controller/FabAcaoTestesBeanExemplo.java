@@ -5,12 +5,7 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoController;
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
 import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoGerenciarEntidade;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
@@ -28,10 +23,10 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-gears", precisaPermissao = false,
             nomeAcao = "Bean Exemplo Gerenciar",
             xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/gerenciar.xhtml")
-
     beanExempplo_MB_gerenciar,
     //
-    @InfoTipoAcaoFormulario(campos = {"[separador:DadosUsuario 6 campos]", "nome", "cpf", "email", "telefone", "apelido", "senha",
+    @InfoTipoAcaoFormulario(campos = {
+        "[separador:DadosUsuario 6 campos]", "nome", "cpf", "email", "telefone", "apelido", "senha",
         "[separador:DadosEmpresa 5 campos]", "cnpj", "inscricaoEstadual", "inscricaoMunicipal", "site", "telefone",
         "[separador:DadosMix 4 campos]", "nome", "telefone", "id", "cpf",
         "[separador:DadosMix 3 campos]", "email", "inscricaoMunicipal", "telefone"},
@@ -41,7 +36,8 @@ public enum FabAcaoTestesBeanExemplo implements ItfFabricaAcoes {
     @InfoTipoAcaoFormulario(icone = "fa fa-edit")
     beanExemplo_FRM_teste2FormMuiltiplasEntidades,
     //
-    @InfoTipoAcaoFormulario(campos = {"[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-list",
+    @InfoTipoAcaoFormulario(campos = {
+        "[separador:DadosLista]", "nome", "cpf", "email", "telefone"}, icone = "fa fa-list",
             xhtmlDaAcao = "/resources/SBComp/SBSystemPages/exemplosAdamantium/beanexemplo/listar.xhtml")
     beanExemplo_FRM_LISTAR_Teste,
     //

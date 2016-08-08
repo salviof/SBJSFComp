@@ -1,19 +1,14 @@
 OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA: 
  Você pode encontrar informações mais detalhadas do erro no SystemOut 
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.USUARIO_FRM_LISTAR_GRUPOS não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/usuario/gruposDoUsuario.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/gerenciarGrupo.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_LISTAR_USUARIOS não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/segurança/grupousuariosb/listar.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoTestesBeanExemplo.beanExemplo_FRM_NOVO_Teste não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo demonstração/beanexemplo/editar.xhtml
-->O ícone  da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_CTR_SALVAR_MERGE com nome [fa-save (alias)] não foi encontrado no arquivo css do FontAswome e
 ->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/editarGrupo.xhtml
-->O Icone da acao FabAcaoTestesBeanExemplo.beanExempplo_MB_gerenciar esta nulo
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_NOVO não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/usuario/grupo/editarGrupo.xhtml
-->O Icone da acao FabAcaoSeguranca.ACAO_CTR_INTERNA_DO_SISTEMA esta nulo
-->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/restrito/restrito.xhtml
-->O Icone da acao FabAcaoTestesBeanExemplo.beanExemplo_FRM_teste2FormMuiltiplasEntidades esta nulo
-->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/editarGrupo.xhtml
-->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_LISTAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/resources/SBComp/SBSystemPages/seguranca/simples/grupo/listarGrupos.xhtml
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_SELCAO com nome [fa-map-signs] não foi encontrado no arquivo css do FontAswome e
 ->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_LISTAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/listar.xhtml
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_GESTAO_E_PARAMETRO com nome [fa-external-link-square ] não foi encontrado no arquivo css do FontAswome e
+->HV000116: O arquivo xhtml da ação FabAcaoEditorDeComponentes.COMPONENTE_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/componentes/editar.xhtml
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_FORMULARIO com nome [fa-wpforms] não foi encontrado no arquivo css do FontAswome e
+->HV000116: O arquivo xhtml da ação FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/componentes/novo.xhtml
+->O xhtml da açãoFabAcaoTestesBeanExemplo.beanExemplo_FRM_teste2FormMuiltiplasEntidades está definido como não implementado
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_GESTAO com nome [fa-fa-external-link] não foi encontrado no arquivo css do FontAswome e
+->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/restrito/restrito.xhtml
 

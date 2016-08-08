@@ -7,9 +7,8 @@ package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_control
 
 import com.super_bits.Controller.UtilFabricaDeAcoesBasico;
 import com.super_bits.InomeClienteI.TestesSBCompSemPersistencia;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
+import com.super_bits.modulosSB.SBCore.InfoCampos.UtilSBCoreReflexaoCampos;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -22,6 +21,8 @@ public class FabAcaoTestesBeanExemploTest extends TestesSBCompSemPersistencia {
 
     @Test
     public void testValues() {
+
+        UtilSBCoreReflexaoCampos.getFieldByNomeCompletoCaminho("BeanExemplo.email");
 
         for (FabAcaoTestesBeanExemplo acao : FabAcaoTestesBeanExemplo.values()) {
             UtilFabricaDeAcoesBasico.validaIntegridadeAcaoDoSistema(acao.getAcaoDoSistema());

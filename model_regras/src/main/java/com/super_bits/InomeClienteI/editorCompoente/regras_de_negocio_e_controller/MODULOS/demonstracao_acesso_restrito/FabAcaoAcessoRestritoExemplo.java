@@ -5,20 +5,14 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito;
 
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoController;
-import com.super_bits.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoGerenciarEntidade;
-import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabModulosJSFComp;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
-import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.TratamentoDeErros.FabErro;
-import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
+import com.super_bits.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabModulosJSFComp;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.InfoModuloSBComp;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
+import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
 
 /**
  *
@@ -93,7 +87,7 @@ public enum FabAcaoAcessoRestritoExemplo implements ItfFabricaAcoes {
      * @see
      * UtilFabricaDeAcoesAcessosModel#getTipoAcaoByNome(com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes)
      */
-    @InfoTipoAcaoFormulario(campos = {"id", "nomeAcao", "dataCriacao", "ativo"}, icone = "fa fa-save", entidade = AcaoDoSistema.class)
+    @InfoTipoAcaoController(icone = "fa fa-save", entidade = AcaoDoSistema.class)
     RECURSO_RESTRITO_CTR_SALVAR_MERGE;
 
     @Override

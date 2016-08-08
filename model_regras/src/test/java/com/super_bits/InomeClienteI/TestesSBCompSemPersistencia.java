@@ -5,9 +5,14 @@
  */
 package com.super_bits.InomeClienteI;
 
+import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
+import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.InfoCampos.UtilSBCoreReflexaoCampos;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,6 +22,10 @@ public class TestesSBCompSemPersistencia extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
+        List<Class> classesDoSistema = new ArrayList();
+        classesDoSistema.add(BeanExemplo.class);
+        classesDoSistema.add(UsuarioSB.class);
+        UtilSBCoreReflexaoCampos.configurarTodasAsClasses(classesDoSistema);
         SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), false);
     }
 

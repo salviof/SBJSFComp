@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
+        <ui:define name="head"  >
+            <style>
+                .botaoBox {
+
+                    margin-top: 3px;
+                }
+            </style>
+
+
+        </ui:define>
+
+        <ui:define name="divConteudo">
+
+
+            <h:form >
+                <p:panel header="Selecione uma ação para visualizar, e clique no tipo de teste que deseja utilizar">
+                    <SBComp:seletorItem
+                        lista="#{pgBotaoDeAcaoLab.acoesParaBotoes}"
+                        itemSelecionado="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                        /> <br/>
+                    <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
+                        <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
+
+
+                    </p:selectOneMenu>
+
+
+
+                    <c:forEach items="#{pgBotaoDeAcaoLab.acoesDeExibicao}" var="acao">
+                        <p:commandButton update="@form" value="#{acao.nomeAcao}"
+                                         action="#{pgBotaoDeAcaoLab.executarAcaoSelecionada()}"
+
+                                         >
+                            <f:setPropertyActionListener target="#{pgBotaoDeAcaoLab.acaoSelecionada}" value="#{acao}" />
+                        </p:commandButton>
+                    </c:forEach>
+
+
+
+                </p:panel>
+
+            </h:form>
+            <h:panelGroup id="#{pgBotaoDeAcaoLab.idAreaExbicaoAcaoSelecionada}" >
+                #{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}
+                <ui:include src="#{pgBotaoDeAcaoLab.xhtmlAcaoAtual}" />
+            </h:panelGroup>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <SBComp:infoPagina />
+
+
+        </ui:define>
+    </ui:composition>
+</html>
+
+
+
+
+
+
+
+
+
+

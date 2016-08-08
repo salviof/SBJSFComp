@@ -6,13 +6,15 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabMenuExemplo;
+import com.super_bits.SBComp.paginas.PgBotaoDeAcaoLab;
 import com.super_bits.SBComp.paginas.PgComponenteLab;
+import com.super_bits.SBComp.paginas.PgDemoComponente;
 import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.SBComp.paginas.PgHomeSBComp;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
-import com.super_bits.SBComp.paginas.PgDemoComponente;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.PgTestesCampo;
 import com.super_bits.view.menu.ItfFabricaMenu;
 import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
@@ -43,6 +45,10 @@ public class SiteMap extends MB_SiteMapa {
     private PgProjetoSBVisaoGeral visaoGeral;
     @Inject
     private PgComponenteLab laboratorioComponentes;
+    @Inject
+    private PgBotaoDeAcaoLab botaoDeAcaoLab;
+    @Inject
+    private PgTestesCampo testesCampo;
 
     public SiteMap() {
         super();

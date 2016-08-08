@@ -18,7 +18,7 @@ public class ConfigWPInomeProjetoI implements ItfConfigWebPagina {
 
     @Override
     public String SITE_HOST() {
-        return "http://localhost:8084";
+        return "http://localhost:8080";
     }
 
     @Override

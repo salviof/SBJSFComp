@@ -5,23 +5,25 @@
  */
 package com.super_bits.SBComp.paginas;
 
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormulario;
-import com.super_bits.InomeClienteI.editorCompoente.ComponenteVisual;
+import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.Controller.Interfaces.acoes.ItfAcaoSecundaria;
+import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoEditorDeComponentes;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.InfoAcaoEditorComponente;
-import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
-import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
-import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
+import com.super_bits.modulosSB.SBCore.fabrica.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualInputs;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualMenu;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualSeletorItem;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualSeletorItens;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
-
 import javax.inject.Named;
 
 /**
@@ -39,8 +41,9 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
     private List<String> componentesExistentes;
 
     private CaminhoCampoReflexao campoSelecionado;
-    private List<CaminhoCampoReflexao> camposDisponiveis;
+    private final List<CaminhoCampoReflexao> camposDisponiveis;
     private final BeanExemplo beanExemplo = new BeanExemplo();
+    private final List<ItfAcaoSecundaria> acoesDisponiveis;
 
     public PgEditarComponente() {
         super(new AcaoDoSistema[]{
@@ -51,7 +54,15 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
                 FabAcaoEditorDeComponentes.COMPONENTE_FRM_LISTAR.getAcaoDoSistema().getComoFormularioEntidade(),
                 null,
                 false, true, true, true, false);
-        camposDisponiveis = beanExemplo.getCaminhoCampoNivel1();
+
+        Field[] campos = BeanExemplo.class.getDeclaredFields();
+        camposDisponiveis = new ArrayList<>();
+
+        acoesDisponiveis = FabAcaoEditorDeComponentes.COMPONENTE_MB_GERENCIAR.getAcaoDoSistema().getComoGestaoEntidade().getAcoesVinculadas();
+
+        for (Field cp : campos) {
+            camposDisponiveis.add(new CaminhoCampoReflexao(cp.getName(), BeanExemplo.class));
+        }
 
     }
 
@@ -71,13 +82,11 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
     @Override
     public void listarDados() {
 
-        ComponenteVisual comp1 = new ComponenteVisual();
-        ComponenteVisual comp2 = new ComponenteVisual();
-        ComponenteVisual comp3 = new ComponenteVisual();
-        ComponenteVisual comp4 = new ComponenteVisual();
         componentesExistentes = new ArrayList<>();
-        comp1.setNome("Componente Endereço");
-        comp1.setXhtml("Componente Endereço");
+        componentesExistentes.addAll((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabCompVisualInputs.class));
+        componentesExistentes.addAll((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabCompVisualMenu.class));
+        componentesExistentes.addAll((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabCompVisualSeletorItem.class));
+        componentesExistentes.addAll((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabCompVisualSeletorItens.class));
 
     }
 
@@ -95,6 +104,15 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     public BeanExemplo getBeanExemplo() {
         return beanExemplo;
+    }
+
+    public List<ItfAcaoSecundaria> getAcoesDisponiveis() {
+        return acoesDisponiveis;
+    }
+
+    @Override
+    public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
+        this.acaoSelecionada = acaoSelecionada;
     }
 
 }
