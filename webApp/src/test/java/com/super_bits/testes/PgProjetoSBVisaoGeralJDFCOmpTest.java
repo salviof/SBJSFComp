@@ -31,7 +31,7 @@ public class PgProjetoSBVisaoGeralJDFCOmpTest extends TesteJunit {
     public void testInit() {
         try {
 
-            String xhtml = FabAcaoProjetoSB.PROJETO_GERENCIAR_MB.getAcaoDoSistema().comoFormularioEntidade().getXhtml();
+            String xhtml = FabAcaoProjetoSB.PROJETO_GERENCIAR_MB.getAcaoDoSistema().getComoFormularioEntidade().getXhtml();
             PgProjetoSBVisaoGeral paginaProgeto = new PgProjetoSBVisaoGeral();
             paginaProgeto.getAcaoVinculada();
             MapaAcoesSistema.makeMapaAcoesSistema();

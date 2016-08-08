@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 
 
 
@@ -29,6 +29,13 @@
     margin-left: 5%;
 }
 
+.ContagemRegressiva{
+
+    color: #FF0000 !important;
+    background-color: #FFFFFF !important;
+
+}
+
 .Container50.Responsive100{
     margin-left: 5%;
 
@@ -52,6 +59,7 @@
     margin-left: 2%;
 
 }
+
 
 .Container33.Responsive100.D{
     margin-left: 2%;

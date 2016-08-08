@@ -32,7 +32,7 @@ public class FabAcaoEditorDeComponentesTest extends TesteAcaoDoSistema {
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), true);
 
-        for (GrupoCampos grp : FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoDoSistema().comoFormulario().getGruposDeCampos()) {
+        for (GrupoCampos grp : FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoDoSistema().getComoFormulario().getGruposDeCampos()) {
             System.out.println("GRUPOOOOO " + grp.getNomeGrupo());
             for (CaminhoCampoReflexao campo : grp.getCampos()) {
                 System.out.println(campo.getCaminhoCompletoString());
