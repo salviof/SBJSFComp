@@ -95,7 +95,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Super_BitsWebPaginas</servlet-name>
-        <url-pattern>*.wp</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
     <listener>
         <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>

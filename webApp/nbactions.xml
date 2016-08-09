@@ -43,6 +43,8 @@
                 <netbeans.deploy.debugmode>true</netbeans.deploy.debugmode>
                 
                 <skipTests>true</skipTests>
+                
+                <jpda.listen>maven</jpda.listen>
             </properties>
         </action>
     </actions>
