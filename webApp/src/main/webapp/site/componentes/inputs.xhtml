@@ -33,39 +33,39 @@
 
 
 
+
+        [
         <h:form>
-            [
-            <h:form>
-                <br/>
-                <ui:repeat value="#{pgTestesCampo.acoesParaCampo}" var="opc" varStatus="rec">
+            <br/>
+            <ui:repeat value="#{pgTestesCampo.acoesParaCampo}" var="opc" varStatus="rec">
 
-                    <p:commandButton style="margin-bottom: 5px; "
-                                     id="btIcon#{cc.id}"
-                                     icon="#{opc.iconeAcao}"
-                                     action="#{pgEditarComponente.executarAcaoSelecionada()}"
-                                     update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"
-                                     >
-                        <f:setPropertyActionListener
-                            target="#{pgTestesCampo.acaoSelecionada}"
-                            value="#{opc}"/>
+                <p:commandButton style="margin-bottom: 5px; "
+                                 id="btIcon#{cc.id}"
+                                 icon="#{opc.iconeAcao}"
+                                 action="#{pgEditarComponente.executarAcaoSelecionada()}"
+                                 update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"
+                                 >
+                    <f:setPropertyActionListener
+                        target="#{pgTestesCampo.acaoSelecionada}"
+                        value="#{opc}"/>
 
-                    </p:commandButton>
-                </ui:repeat>
-            </h:form>
-
-            ]
-
-
-
-            <h:panelGroup id="visualizacaoCampo" >
-
-                <ui:include src="#{pgTestesCampo.acaoSelecionada.comoFormulario.xhtml}" >
-                    <ui:param name="prCampo" value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}" />
-                </ui:include>
-
-            </h:panelGroup>
-
+                </p:commandButton>
+            </ui:repeat>
         </h:form>
+
+        ]
+
+
+
+        <h:panelGroup id="visualizacaoCampo" >
+
+            <ui:include src="#{pgTestesCampo.acaoSelecionada.comoFormulario.xhtml}" >
+                <ui:param name="prCampo" value="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}" />
+            </ui:include>
+
+        </h:panelGroup>
+
+
 
 
 
