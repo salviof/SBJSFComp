@@ -61,7 +61,11 @@ public class BeanExemplo
     @NotNull
     private String cnpj;
 
-    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Insc. Estadual")
+    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Teste")
+    @NotNull
+    private String cpTeste;
+
+    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Inscestadual")
     @NotNull
     private String inscricaoEstadual;
 
@@ -244,11 +248,11 @@ public class BeanExemplo
     }
 
     public String getInscricaoEstadual() {
-        return inscricaoEstadual;
+        return cpTeste;
     }
 
     public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
+        this.cpTeste = inscricaoEstadual;
     }
 
     public String getInscricaoMunicipal() {
