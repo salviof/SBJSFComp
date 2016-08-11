@@ -13,6 +13,7 @@
 
     <ui:composition template="/resources/SBComp/template/basico/modeloAnonimo.xhtml">
 
+
         <ui:define name="head"  >
             <style>
                 .botaoBox {
@@ -25,6 +26,12 @@
         </ui:define>
 
         <ui:define name="divConteudo">
+
+            Server info: #{application.serverInfo} <br/>
+            Servlet version: #{application.majorVersion} #{application.minorVersion} <br/>
+            <!-- JSP version:   < %= JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion() %><br/>
+            Java version: <%= System.getProperty("java.version") %><br/> -->
+
 
 
             asdfasdf

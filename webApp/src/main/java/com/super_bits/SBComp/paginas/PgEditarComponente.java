@@ -15,6 +15,7 @@ import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.fabrica.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import com.super_bits.modulosSB.webPaginas.controller.sessao.SessaoAtualSBWP;
 import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualMenu;
 import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualSeletorItem;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -39,7 +41,8 @@ import javax.inject.Named;
 public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
 
     private List<String> componentesExistentes;
-
+    @Inject
+    private SessaoAtualSBWP sessaoAtual;
     private CaminhoCampoReflexao campoSelecionado;
     private final List<CaminhoCampoReflexao> camposDisponiveis;
     private final BeanExemplo beanExemplo = new BeanExemplo();
@@ -113,6 +116,10 @@ public class PgEditarComponente extends MB_paginaCadastroEntidades<Object> {
     @Override
     public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
         this.acaoSelecionada = acaoSelecionada;
+    }
+
+    public SessaoAtualSBWP getSessaoAtual() {
+        return sessaoAtual;
     }
 
 }

@@ -97,9 +97,8 @@
         <servlet-name>Super_BitsWebPaginas</servlet-name>
         <url-pattern>*.wp</url-pattern>
     </servlet-mapping>
-    <listener>
-        <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>
-    </listener>
+
+
 
     <!-- TagLib SuperbitsFrameWorkhttps://github.com/salviof/SuperBits_FrameWork-->
     <context-param>
@@ -121,10 +120,7 @@
         <param-value>true</param-value>
     </context-param>
 
-    <context-param>
-        <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
-        <param-value>false</param-value>
-    </context-param>
+
 
 
 

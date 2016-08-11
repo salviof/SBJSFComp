@@ -43,8 +43,10 @@
                                  id="btIcon#{cc.id}"
                                  icon="#{opc.iconeAcao}"
                                  action="#{pgEditarComponente.executarAcaoSelecionada()}"
-                                 update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}"
+                                 update="#{pgUtil.makeCaminhoCompletoID('exbicaoDeComponentes')}
+                                 #{pgUtil.makeCaminhoCompletoID('visualizacaoCampo')}"
                                  >
+
                     <f:setPropertyActionListener
                         target="#{pgTestesCampo.acaoSelecionada}"
                         value="#{opc}"/>
