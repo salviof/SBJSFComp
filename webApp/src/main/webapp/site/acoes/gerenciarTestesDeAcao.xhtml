@@ -27,10 +27,12 @@
 
 
             <h:form >
+                #{pgBotaoDeAcaoLab.acoesParaBotoes}
                 <p:panel header="Selecione uma ação para visualizar, e clique no tipo de teste que deseja utilizar">
                     <SBComp:seletorItem
                         lista="#{pgBotaoDeAcaoLab.acoesParaBotoes}"
                         itemSelecionado="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+
                         /> <br/>
                     <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
                         <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
