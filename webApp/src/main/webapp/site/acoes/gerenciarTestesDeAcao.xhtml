@@ -29,11 +29,18 @@
             <h:form >
                 #{pgBotaoDeAcaoLab.acoesParaBotoes}
                 <p:panel header="Selecione uma ação para visualizar, e clique no tipo de teste que deseja utilizar">
+
+                    [seletor Item
                     <SBComp:seletorItem
                         lista="#{pgBotaoDeAcaoLab.acoesParaBotoes}"
                         itemSelecionado="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
 
                         /> <br/>
+                    ]
+
+
+
+
                     <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
                         <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
 
@@ -58,6 +65,7 @@
             </h:form>
             <h:panelGroup id="#{pgBotaoDeAcaoLab.idAreaExbicaoAcaoSelecionada}" >
                 #{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}
+                #{pgBotaoDeAcaoLab.xhtmlAcaoAtual}
                 <ui:include src="#{pgBotaoDeAcaoLab.xhtmlAcaoAtual}" />
             </h:panelGroup>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

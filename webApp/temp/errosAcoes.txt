@@ -1,6 +1,6 @@
 OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA: 
  Você pode encontrar informações mais detalhadas do erro no SystemOut 
-->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_GESTAO com nome [fa-fa-external-link] não foi encontrado no arquivo css do FontAswome e
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_LINK com nome [fa-fa-external-link] não foi encontrado no arquivo css do FontAswome e
 ->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_EDITAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
 ->O ícone  da ação FabAcaoEditorDeComponentes.COMPONENTE_FRM_NOVO com nome [fa-plus ] não foi encontrado no arquivo css do FontAswome e
 ->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_FRM_VISUALIZAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/modulo acesso restrito/acaodosistema/editar.xhtml
@@ -8,7 +8,7 @@ OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA:
 ->HV000116: O arquivo xhtml da ação FabAcaoAcessoRestritoExemplo.RECURSO_RESTRITO_MB_GERENCIAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/restrito/restrito.xhtml
 ->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_FORMULARIO com nome [fa-wpforms] não foi encontrado no arquivo css do FontAswome e
 ->O xhtml da açãoFabAcaoTestesBeanExemplo.beanExemplo_FRM_teste2FormMuiltiplasEntidades está definido como não implementado
-->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_GESTAO_E_PARAMETRO com nome [fa-external-link-square ] não foi encontrado no arquivo css do FontAswome e
+->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_LINK_E_PARAMETRO com nome [fa-external-link-square ] não foi encontrado no arquivo css do FontAswome e
 ->O ícone  da ação FabAcaoTestesBotaoDeAcao.ACAO_FRM_TESTE_SELCAO com nome [fa-map-signs] não foi encontrado no arquivo css do FontAswome e
 ->HV000116: O arquivo xhtml da ação FabAcaoSeguranca.GRUPO_FRM_LISTAR não foi encontrado em /home/superBits/projetos/Faculdade_Java/source//SBJSFComp/webApp/src/main/webapp/site/segurança/grupousuariosb/listar.xhtml
 

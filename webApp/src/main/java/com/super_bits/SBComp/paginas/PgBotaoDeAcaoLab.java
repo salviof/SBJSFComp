@@ -62,7 +62,7 @@ public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
         FabTipoAcaoBase acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
         switch (acaoEscolhida) {
             case ACAO_MB_GERENCIAR:
-            case ACAO_FRM_TESTE_GESTAO:
+            case ACAO_FRM_TESTE_LINK:
 
                 acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.GESTAO;
                 break;
@@ -84,7 +84,7 @@ public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
                 return;
             case ACAO_FRM_INSTRUCOES:
                 return;
-            case ACAO_FRM_TESTE_GESTAO_E_PARAMETRO:
+            case ACAO_FRM_TESTE_LINK_E_PARAMETRO:
                 return;
             default:
                 throw new AssertionError(acaoEscolhida.name());

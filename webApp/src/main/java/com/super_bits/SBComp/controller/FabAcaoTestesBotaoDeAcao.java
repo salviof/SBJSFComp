@@ -35,10 +35,10 @@ public enum FabAcaoTestesBotaoDeAcao implements ItfFabricaAcoes {
     ACAO_FRM_TESTE_FORMULARIO,
     @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoGestao.xhtml",
             nomeAcao = "Link para Gestão ", icone = "fa fa-fa-external-link", descricao = "")
-    ACAO_FRM_TESTE_GESTAO,
+    ACAO_FRM_TESTE_LINK,
     @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoGestao.xhtml",
             nomeAcao = "Link para Gestão com parametros ", icone = "fa fa-external-link-square ", descricao = "")
-    ACAO_FRM_TESTE_GESTAO_E_PARAMETRO,
+    ACAO_FRM_TESTE_LINK_E_PARAMETRO,
     @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/selecaoDeAcao.xhtml",
             nomeAcao = "Caminho a seguir", icone = "fa fa-map-signs", descricao = "")
     ACAO_FRM_TESTE_SELCAO,
