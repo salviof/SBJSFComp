@@ -24,35 +24,32 @@ public enum FabAcaoTestesBotaoDeAcao implements ItfFabricaAcoes {
     @InfoTipoAcaoGestaoEntidade(xhtmlDaAcao = "/site/acoes/gerenciarTestesDeAcao.xhtml",
             nomeAcao = "Testar Botões de ação", icone = "fa fa-rocket", descricao = "Executa testes em botões de ação")
     ACAO_MB_GERENCIAR,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoController.xhtml",
-            nomeAcao = "Botão com ação ", icone = "fa fa-gear", descricao = "")
-    ACAO_FRM_TESTE_CONTROLLER,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoControllerComEntidade.xhtml",
-            nomeAcao = "Controller com ação e Entidade", icone = "fa fa-gears", descricao = "")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoAcaoTst.xhtml",
+            nomeAcao = "Botão com ação personalizada ", icone = "fa fa-gear", descricao = "")
+    ACAO_FRM_TESTE_BOTAO_ACAO,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoAcaoPaginaAtualTst.xhtml",
+            nomeAcao = "Executar ação pagina Atual", icone = "fa fa-gears", descricao = "")
     ACAO_FRM_TESTE_CONTROLLER_COM_ENTIDADE,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoFormulario.xhtml",
-            nomeAcao = "Visualização de formulario", icone = "fa fa-wpforms", descricao = "")
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoAcaoDeEntidadePaginaAtualTst.xhtml",
+            nomeAcao = "Executar ação de entidade pagina Atual", icone = "fa fa-wpforms", descricao = "")
     ACAO_FRM_TESTE_FORMULARIO,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoGestao.xhtml",
-            nomeAcao = "Link para Gestão ", icone = "fa fa-fa-external-link", descricao = "")
-    ACAO_FRM_TESTE_LINK,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoGestao.xhtml",
-            nomeAcao = "Link para Gestão com parametros ", icone = "fa fa-external-link-square ", descricao = "")
-    ACAO_FRM_TESTE_LINK_E_PARAMETRO,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/selecaoDeAcao.xhtml",
-            nomeAcao = "Caminho a seguir", icone = "fa fa-map-signs", descricao = "")
-    ACAO_FRM_TESTE_SELCAO,
-    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/menu.xhtml",
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoFakeTst.xhtml",
+            nomeAcao = "Botao Fake ", icone = "fa fa-fa-external-link", descricao = "")
+    ACAO_FRM_TESTE_FAKE,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/botaoLinkTst.xhtml",
+            nomeAcao = "Links ", icone = "fa fa-external-link-square ", descricao = "")
+    ACAO_FRM_TESTE_MENU,
+    @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/menuTst.xhtml",
             nomeAcao = "Menu",
             icone = "fa fa-bars", descricao = "")
-    ACAO_FRM_TESTE_MENUS,
+    ACAO_FRM_TESTE_INSTRUCAO,
     @InfoTipoAcaoFormulario(xhtmlDaAcao = "/site/acoes/instrucoes.xhtml",
             nomeAcao = "Instruções", icone = "fa fa-graduation-cap", descricao = "")
     ACAO_FRM_INSTRUCOES;
 
     @Override
-    public ItfAcaoDoSistema getAcaoDoSistema() {
-        return UtilFabricaDeAcoesAcessosModel.getNovaAcao(this);
+    public AcaoDoSistema getAcaoDoSistema() {
+        return (AcaoDoSistema) UtilFabricaDeAcoesAcessosModel.getNovaAcao(this);
     }
 
     @Override

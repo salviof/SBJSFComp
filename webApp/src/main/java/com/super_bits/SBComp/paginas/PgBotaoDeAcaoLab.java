@@ -13,8 +13,10 @@ import com.super_bits.SBComp.controller.InfoAcaoTestesDeAcao;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.fabrica.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.tipos.FabTipoVisualBotaoAcao;
 import java.util.List;
@@ -30,14 +32,13 @@ import javax.inject.Named;
 @ViewScoped
 @InfoAcaoTestesDeAcao(acao = FabAcaoTestesBotaoDeAcao.ACAO_MB_GERENCIAR)
 @InfoPagina(nomeCurto = "BotaoAcao", tags = {"Botão de Ação"})
-public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
+public class PgBotaoDeAcaoLab extends MB_paginaCadastroEntidades<AcaoDoSistema> {
 
     private List<AcaoDoSistema> acoesDeExibicao;
     private BeanExemplo beanExemplo;
-    private List<AcaoDoSistema> acoesParaBotoes;
+    private final List<AcaoDoSistema> acoesParaBotoes = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoSeguranca.class);
     private AcaoDoSistema acaoParaBotaoSelecionada;
     private ItfAcaoDoSistema acaoInstrucao;
-
     private String tipoDeVisualizacao;
     private List<String> tiposDeVisualizacao;
     private AcaoDoSistema acaoArmazenadaTeste;
@@ -46,7 +47,7 @@ public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
     public void init() {
         tiposDeVisualizacao = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabTipoVisualBotaoAcao.class);
         tipoDeVisualizacao = tiposDeVisualizacao.get(0);
-        acoesParaBotoes = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoSeguranca.class);
+
         acoesDeExibicao = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoTestesBotaoDeAcao.class);
         acaoInstrucao = FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema();
         xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
@@ -54,66 +55,77 @@ public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
 
     }
 
+    public PgBotaoDeAcaoLab() {
+        super((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoSeguranca.class),
+                FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
+                FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
+                FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
+                false);
+
+    }
+
     @Override
     public void executarAcaoSelecionada() {
         super.executarAcaoSelecionada();
+        try {
+            FabAcaoTestesBotaoDeAcao acaoEscolhida = (FabAcaoTestesBotaoDeAcao) acaoSelecionada.getEnumAcaoDoSistema();
+            FabTipoAcaoBase acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
+            switch (acaoEscolhida) {
+                case ACAO_MB_GERENCIAR:
+                case ACAO_FRM_TESTE_FAKE:
 
-        FabAcaoTestesBotaoDeAcao acaoEscolhida = (FabAcaoTestesBotaoDeAcao) acaoSelecionada.getEnumAcaoDoSistema();
-        FabTipoAcaoBase acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
-        switch (acaoEscolhida) {
-            case ACAO_MB_GERENCIAR:
-            case ACAO_FRM_TESTE_LINK:
+                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.GESTAO;
+                    break;
 
-                acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.GESTAO;
-                break;
+                case ACAO_FRM_TESTE_BOTAO_ACAO:
+                case ACAO_FRM_TESTE_CONTROLLER_COM_ENTIDADE:
 
-            case ACAO_FRM_TESTE_CONTROLLER:
-            case ACAO_FRM_TESTE_CONTROLLER_COM_ENTIDADE:
+                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.CONTROLLER;
+                    break;
+                case ACAO_FRM_TESTE_FORMULARIO:
 
-                acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.CONTROLLER;
-                break;
-            case ACAO_FRM_TESTE_FORMULARIO:
+                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
 
-                acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
+                    break;
 
-                break;
-            case ACAO_FRM_TESTE_SELCAO:
-                return;
+                case ACAO_FRM_TESTE_INSTRUCAO:
+                    return;
+                case ACAO_FRM_INSTRUCOES:
+                    return;
+                case ACAO_FRM_TESTE_MENU:
+                    return;
+                default:
+                    throw new AssertionError(acaoEscolhida.name());
 
-            case ACAO_FRM_TESTE_MENUS:
-                return;
-            case ACAO_FRM_INSTRUCOES:
-                return;
-            case ACAO_FRM_TESTE_LINK_E_PARAMETRO:
-                return;
-            default:
-                throw new AssertionError(acaoEscolhida.name());
+            }
 
-        }
+            switch (acaoBaseEsperadaDaAcaoEscolhida) {
+                case FORMULARIO:
+                    if (!acaoParaBotaoSelecionada.isUmaAcaoFormulario()) {
+                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
+                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
+                    }
+                    break;
+                case GESTAO:
+                    if (!acaoParaBotaoSelecionada.isUmaAcaoGestaoDominio()) {
 
-        switch (acaoBaseEsperadaDaAcaoEscolhida) {
-            case FORMULARIO:
-                if (!acaoParaBotaoSelecionada.isUmaAcaoFormulario()) {
-                    SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                    xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                }
-                break;
-            case GESTAO:
-                if (!acaoParaBotaoSelecionada.isUmaAcaoGestaoDominio()) {
+                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
+                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
+                    }
+                    break;
+                case CONTROLLER:
+                    if (!acaoParaBotaoSelecionada.isUmaAcaoController()) {
+                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
+                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
+                    }
+                    break;
+                default:
+                    throw new AssertionError(acaoSelecionada.getTipoAcaoGenerica().getAcaoBase().name());
 
-                    SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                    xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                }
-                break;
-            case CONTROLLER:
-                if (!acaoParaBotaoSelecionada.isUmaAcaoController()) {
-                    SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                    xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                }
-                break;
-            default:
-                throw new AssertionError(acaoSelecionada.getTipoAcaoGenerica().getAcaoBase().name());
-
+            }
+        } catch (Throwable t) {
+            SBCore.enviarAvisoAoUsuario("A ação " + acaoSelecionada.getNomeUnico() + " foi executada, porém a execução não está preparada para este tipo de ação");
+            SBCore.enviarMensagemUsuario("A prova do despreparo é o Erro:" + t.getMessage(), FabMensagens.ERRO);
         }
         paginaUtil.atualizaTelaPorID(idAreaExbicaoAcaoSelecionada);
     }
@@ -166,6 +178,11 @@ public class PgBotaoDeAcaoLab extends MB_PaginaConversation {
     public void setAcaoArmazenadaTeste(AcaoDoSistema acaoArmazenadaTeste) {
         SBCore.enviarAvisoAoUsuario("A ação foi alterada para" + acaoArmazenadaTeste.getNomeAcao());
         this.acaoArmazenadaTeste = acaoArmazenadaTeste;
+    }
+
+    @Override
+    public void listarDados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

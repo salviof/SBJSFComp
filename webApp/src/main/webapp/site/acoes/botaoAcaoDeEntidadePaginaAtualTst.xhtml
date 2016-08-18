@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sb="http://superbitsframework/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    >
+
+
+
+    <ui:composition template="/resources/SBComp/template/basico/conteudoEmBranco.xhtml"  >
+
+
+        <ui:define name="conteudo">
+
+
+            <p:fieldset legend="Icone e Nome" >
+                N<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.nome}" /><br/>
+                IN<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.iconeENome}" /><br/>
+
+                I<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.icone}" /><br/>
+                G<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.gigante}" /><br/>
+
+            </p:fieldset>
+
+            <p:fieldset legend="Icone" >
+
+            </p:fieldset>
+
+            <p:fieldset legend="Teste ação com Javascript no final" >
+
+            </p:fieldset>
+
+
+            <p:fieldset legend="Teste ação sem metodo" >
+
+            </p:fieldset>
+
+            <p:fieldset legend="Teste ação com metodo denovo" >
+
+            </p:fieldset>
+
+
+
+
+        </ui:define>
+
+
+    </ui:composition>
+
+
+
+</html>
+

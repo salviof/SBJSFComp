@@ -3,7 +3,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:pe="http://primefaces.org/ui/extensions"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
@@ -27,24 +26,20 @@
 
 
             <h:form >
-                #{pgBotaoDeAcaoLab.acoesParaBotoes}
+
                 <p:panel header="Selecione uma ação para visualizar, e clique no tipo de teste que deseja utilizar">
 
-                    [seletor Item
+
                     <SBComp:seletorItem
                         lista="#{pgBotaoDeAcaoLab.acoesParaBotoes}"
                         itemSelecionado="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
 
                         /> <br/>
-                    ]
-
 
 
 
                     <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
                         <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
-
-
                     </p:selectOneMenu>
 
 
@@ -64,8 +59,8 @@
 
             </h:form>
             <h:panelGroup id="#{pgBotaoDeAcaoLab.idAreaExbicaoAcaoSelecionada}" >
-                #{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}
-                #{pgBotaoDeAcaoLab.xhtmlAcaoAtual}
+                #{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada} <br/>
+                #{pgBotaoDeAcaoLab.xhtmlAcaoAtual}<br/>
                 <ui:include src="#{pgBotaoDeAcaoLab.xhtmlAcaoAtual}" />
             </h:panelGroup>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
