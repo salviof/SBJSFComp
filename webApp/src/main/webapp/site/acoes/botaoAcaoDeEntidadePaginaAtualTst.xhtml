@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:sb="http://superbitsframework/facelets"
+      xmlns:sb="http://superbitsframework/ui"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
@@ -20,20 +20,34 @@ and open the template in the editor.
         <ui:define name="conteudo">
 
 
-            <p:fieldset legend="Icone e Nome" >
-                N<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.nome}" /><br/>
-                IN<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.iconeENome}" /><br/>
+            <p:fieldset legend="Ação da Pagina Atualk" >
 
-                I<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.icone}" /><br/>
-                G<sb:botaoAcaoDePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}" layout="#{layoutsComponenteSB.layoutBotoes.gigante}" /><br/>
+
+
+                <sb:botaoAcaoPaginaAtual
+                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" />
+                <br/>
+
+
 
             </p:fieldset>
 
-            <p:fieldset legend="Icone" >
+            <p:fieldset legend="Acao Entidade Pagina Atual" >
+                <sb:botaoAcaoEntidadePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                                                 layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                                                 registro="#{pgBotaoDeAcaoLab.acaoSelecionada}"
 
+                                                 />
             </p:fieldset>
 
             <p:fieldset legend="Teste ação com Javascript no final" >
+
+                <sb:botaoAcaoPaginaAtual
+                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                    javaScriptOncomplete="javascript:alert('Colé');"
+                    />
 
             </p:fieldset>
 

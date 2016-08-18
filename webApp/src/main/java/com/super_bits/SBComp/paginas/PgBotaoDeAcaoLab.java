@@ -18,7 +18,10 @@ import com.super_bits.modulosSB.SBCore.fabrica.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.tipos.FabTipoVisualBotaoAcao;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.tipos.FabTipoVisualFormulario;
+
+import com.super_bits.view.fabricasCompVisual.ComponenteVisualSB;
+import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -39,13 +42,13 @@ public class PgBotaoDeAcaoLab extends MB_paginaCadastroEntidades<AcaoDoSistema> 
     private final List<AcaoDoSistema> acoesParaBotoes = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoSeguranca.class);
     private AcaoDoSistema acaoParaBotaoSelecionada;
     private ItfAcaoDoSistema acaoInstrucao;
-    private String tipoDeVisualizacao;
-    private List<String> tiposDeVisualizacao;
+    private ComponenteVisualSB tipoDeVisualizacao;
+    private List<ComponenteVisualSB> tiposDeVisualizacao;
     private AcaoDoSistema acaoArmazenadaTeste;
 
     @PostConstruct
     public void init() {
-        tiposDeVisualizacao = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabTipoVisualBotaoAcao.class);
+        tiposDeVisualizacao = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabCompVisualBotaoAcao.class);
         tipoDeVisualizacao = tiposDeVisualizacao.get(0);
 
         acoesDeExibicao = UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoTestesBotaoDeAcao.class);
@@ -146,15 +149,15 @@ public class PgBotaoDeAcaoLab extends MB_paginaCadastroEntidades<AcaoDoSistema> 
         return acaoParaBotaoSelecionada;
     }
 
-    public List<String> getTiposDeVisualizacao() {
+    public List<ComponenteVisualSB> getTiposDeVisualizacao() {
         return tiposDeVisualizacao;
     }
 
-    public String getTipoDeVisualizacao() {
+    public ComponenteVisualSB getTipoDeVisualizacao() {
         return tipoDeVisualizacao;
     }
 
-    public void setTipoDeVisualizacao(String tipoDeVisualizacao) {
+    public void setTipoDeVisualizacao(ComponenteVisualSB tipoDeVisualizacao) {
         this.tipoDeVisualizacao = tipoDeVisualizacao;
     }
 

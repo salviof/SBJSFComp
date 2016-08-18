@@ -38,11 +38,13 @@
 
 
 
-                    <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" >
-                        <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}" />
+                    <p:selectOneMenu value="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"  converter="conversorGenerico">
+                        <f:selectItems value="#{pgBotaoDeAcaoLab.tiposDeVisualizacao}"
+                                       var="cp"  itemValue="#{cp}" itemLabel="#{cp.nome}"/>
                     </p:selectOneMenu>
 
-
+                    TIPO VISU#{pgBotaoDeAcaoLab.tipoDeVisualizacao}
+                    TIPO VISU#{pgBotaoDeAcaoLab.tipoDeVisualizacao.nome}
 
                     <c:forEach items="#{pgBotaoDeAcaoLab.acoesDeExibicao}" var="acao">
                         <p:commandButton update="@form" value="#{acao.nomeAcao}"

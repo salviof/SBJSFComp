@@ -105,6 +105,9 @@
         <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>
     </listener>
 
+
+
+
     <!-- TagLib SuperbitsFrameWorkhttps://github.com/salviof/SuperBits_FrameWork-->
     <context-param>
         <param-name>facelets.LIBRARIES</param-name>
