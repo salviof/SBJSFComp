@@ -1,3 +1,6 @@
 [submodule "webApp/src/main/webapp/resources/SBComp"]
 	path = webApp/src/main/webapp/resources/SBComp
 	url = https://github.com/salviof/SBComp.git
+[submodule "devOpsProjeto"]
+	path = devOpsProjeto
+	url = https://github.com/salviof/devOpsProjeto.git
