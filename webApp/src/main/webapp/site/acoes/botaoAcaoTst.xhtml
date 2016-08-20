@@ -6,12 +6,12 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:sb="http://superbitsframework/ui"
+
+      xmlns:p="http://primefaces.org/ui">
 
     >
 
@@ -22,8 +22,30 @@ and open the template in the editor.
 
         <ui:define name="conteudo">
 
+            <p:fieldset legend="Ação Simples">
+                <sb:botaoAcao
+                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                    metodo="#{pgUtil.mensagemAlerta('A ação enviada foi executada com susseso!!!')}"
+                    />
+            </p:fieldset>
 
-            [Controller]
+            <p:fieldset legend="Ação Com Targert">
+                <h:form >
+                    <sb:botaoAcaoAcaoTarget
+                        acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                        layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                        metodo="#{pgUtil.mensagemAlerta('A ação enviada foi executada com susseso!!!')}"
+                        origem="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                        destino="#{pgBotaoDeAcaoLab.entidadeSelecionada}"
+                        idUpdate="@form"
+                        />
+                    #{pgBotaoDeAcaoLab.entidadeSelecionada}
+                </h:form>
+
+            </p:fieldset>
+
+
 
 
         </ui:define>

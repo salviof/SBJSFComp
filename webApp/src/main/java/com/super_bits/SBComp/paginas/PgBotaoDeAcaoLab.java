@@ -6,7 +6,6 @@
 package com.super_bits.SBComp.paginas;
 
 import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
-import com.super_bits.Controller.fabricas.FabTipoAcaoBase;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.SBComp.controller.FabAcaoTestesBotaoDeAcao;
 import com.super_bits.SBComp.controller.InfoAcaoTestesDeAcao;
@@ -15,11 +14,8 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.fabrica.UtilSBCoreFabrica;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.tipos.FabTipoVisualFormulario;
-
 import com.super_bits.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import java.util.List;
@@ -62,7 +58,7 @@ public class PgBotaoDeAcaoLab extends MB_paginaCadastroEntidades<AcaoDoSistema> 
         super((List) UtilSBCoreFabrica.getListaTodosRegistrosDaFabrica(FabAcaoSeguranca.class),
                 FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
                 FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
-                FabAcaoTestesBotaoDeAcao.ACAO_FRM_INSTRUCOES.getAcaoDoSistema(),
+                FabAcaoSeguranca.USUARIO_CTR_SALVAR_MERGE.getAcaoDoSistema(),
                 false);
 
     }
@@ -71,61 +67,34 @@ public class PgBotaoDeAcaoLab extends MB_paginaCadastroEntidades<AcaoDoSistema> 
     public void executarAcaoSelecionada() {
         super.executarAcaoSelecionada();
         try {
-            FabAcaoTestesBotaoDeAcao acaoEscolhida = (FabAcaoTestesBotaoDeAcao) acaoSelecionada.getEnumAcaoDoSistema();
-            FabTipoAcaoBase acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
-            switch (acaoEscolhida) {
-                case ACAO_MB_GERENCIAR:
-                case ACAO_FRM_TESTE_FAKE:
+            /**
+             * FabAcaoTestesBotaoDeAcao acaoEscolhida =
+             * (FabAcaoTestesBotaoDeAcao)
+             * acaoSelecionada.getEnumAcaoDoSistema(); FabTipoAcaoBase
+             * acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
+             * switch (acaoEscolhida) { case ACAO_MB_GERENCIAR: case
+             * ACAO_FRM_TESTE_FAKE:
+             *
+             * acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.GESTAO; break;
+             *
+             * case ACAO_FRM_TESTE_BOTAO_ACAO: case
+             * ACAO_FRM_TESTE_CONTROLLER_COM_ENTIDADE:
+             *
+             * acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.CONTROLLER;
+             * break; case ACAO_FRM_TESTE_FORMULARIO:
+             *
+             * acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
+             *
+             * break;
+             *
+             * case ACAO_FRM_TESTE_INSTRUCAO: return; case ACAO_FRM_INSTRUCOES:
+             * return; case ACAO_FRM_TESTE_MENU: return; default: throw new
+             * AssertionError(acaoEscolhida.name());
+             *
+             * }
+             *
+             */
 
-                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.GESTAO;
-                    break;
-
-                case ACAO_FRM_TESTE_BOTAO_ACAO:
-                case ACAO_FRM_TESTE_CONTROLLER_COM_ENTIDADE:
-
-                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.CONTROLLER;
-                    break;
-                case ACAO_FRM_TESTE_FORMULARIO:
-
-                    acaoBaseEsperadaDaAcaoEscolhida = FabTipoAcaoBase.FORMULARIO;
-
-                    break;
-
-                case ACAO_FRM_TESTE_INSTRUCAO:
-                    return;
-                case ACAO_FRM_INSTRUCOES:
-                    return;
-                case ACAO_FRM_TESTE_MENU:
-                    return;
-                default:
-                    throw new AssertionError(acaoEscolhida.name());
-
-            }
-
-            switch (acaoBaseEsperadaDaAcaoEscolhida) {
-                case FORMULARIO:
-                    if (!acaoParaBotaoSelecionada.isUmaAcaoFormulario()) {
-                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                    }
-                    break;
-                case GESTAO:
-                    if (!acaoParaBotaoSelecionada.isUmaAcaoGestaoDominio()) {
-
-                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                    }
-                    break;
-                case CONTROLLER:
-                    if (!acaoParaBotaoSelecionada.isUmaAcaoController()) {
-                        SBCore.enviarAvisoAoUsuario("a ação selecionada para exibição não parece ser do tipo formulário");
-                        xhtmlAcaoAtual = acaoInstrucao.getComoFormulario().getXhtml();
-                    }
-                    break;
-                default:
-                    throw new AssertionError(acaoSelecionada.getTipoAcaoGenerica().getAcaoBase().name());
-
-            }
         } catch (Throwable t) {
             SBCore.enviarAvisoAoUsuario("A ação " + acaoSelecionada.getNomeUnico() + " foi executada, porém a execução não está preparada para este tipo de ação");
             SBCore.enviarMensagemUsuario("A prova do despreparo é o Erro:" + t.getMessage(), FabMensagens.ERRO);

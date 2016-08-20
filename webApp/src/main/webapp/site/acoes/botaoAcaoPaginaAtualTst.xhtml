@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sb="http://superbitsframework/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    >
+
+
+
+    <ui:composition template="/resources/SBComp/template/basico/conteudoEmBranco.xhtml"  >
+
+
+        <ui:define name="conteudo">
+            TESTES AÇÂO PAGINA ATUAL
+
+
+            <p:fieldset legend="Ação da Pagina Atualk" >
+
+
+
+                <sb:botaoAcaoPaginaAtual
+                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" />
+                <br/>
+
+
+
+            </p:fieldset>
+
+
+
+            <p:fieldset legend="Teste ação com Javascript no final" >
+
+                <sb:botaoAcaoPaginaAtual
+                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                    javaScriptOncomplete="javascript:alert('Colé');"
+                    />
+
+            </p:fieldset>
+
+
+
+
+
+
+        </ui:define>
+
+
+    </ui:composition>
+
+
+
+</html>
+

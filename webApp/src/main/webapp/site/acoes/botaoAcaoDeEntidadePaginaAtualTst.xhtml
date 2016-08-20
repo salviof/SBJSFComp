@@ -19,20 +19,6 @@ and open the template in the editor.
 
         <ui:define name="conteudo">
 
-
-            <p:fieldset legend="Ação da Pagina Atualk" >
-
-
-
-                <sb:botaoAcaoPaginaAtual
-                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
-                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}" />
-                <br/>
-
-
-
-            </p:fieldset>
-
             <p:fieldset legend="Acao Entidade Pagina Atual" >
                 <sb:botaoAcaoEntidadePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
                                                  layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
@@ -40,28 +26,6 @@ and open the template in the editor.
 
                                                  />
             </p:fieldset>
-
-            <p:fieldset legend="Teste ação com Javascript no final" >
-
-                <sb:botaoAcaoPaginaAtual
-                    acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
-                    layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
-                    javaScriptOncomplete="javascript:alert('Colé');"
-                    />
-
-            </p:fieldset>
-
-
-            <p:fieldset legend="Teste ação sem metodo" >
-
-            </p:fieldset>
-
-            <p:fieldset legend="Teste ação com metodo denovo" >
-
-            </p:fieldset>
-
-
-
 
         </ui:define>
 
