@@ -6,8 +6,9 @@
 
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:sb="http://superbitsframework/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:sb="http://superbitsframework/ui"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
 
     <ui:composition >
@@ -16,22 +17,25 @@
             <p:commandButton update="@form" value="TEste" />
             <p:panel class="Container100 Responsive100">
 
-                <ui:repeat value="#{pgEditarComponente.camposDisponiveis}" var="campo" >
+
+
+                <c:forEach items="#{pgEditarComponente.camposDisponiveis}" var="campo">
+
 
 
                     <p:panel class="Container25 Responsive100" header="#{campo.caminhoSemNomeClasse}">
 
 
-                        LLLLLLLLLLLLLLLLLLLL#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse).label}]]] <br/>
-                        #{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}
 
-                        <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}" />
+
+                        <SBComp:input
+                            registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}" />
 
 
                     </p:panel>
 
 
-                </ui:repeat>
+                </c:forEach>
             </p:panel>
         </h:form>
 

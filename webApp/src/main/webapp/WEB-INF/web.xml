@@ -108,12 +108,7 @@
 
 
 
-    <!-- TagLib SuperbitsFrameWorkhttps://github.com/salviof/SuperBits_FrameWork-->
-    <context-param>
-        <param-name>facelets.LIBRARIES</param-name>
-        <param-value>/resources/tagLib/sb.taglib.xml</param-value>
-    </context-param>
-
+ 
 
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
