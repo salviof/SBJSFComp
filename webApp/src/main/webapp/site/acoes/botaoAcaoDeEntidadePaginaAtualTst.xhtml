@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sb="http://superbitsframework/ui"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     >
 
@@ -18,12 +19,21 @@ and open the template in the editor.
 
 
         <ui:define name="conteudo">
-
+            teste
             <p:fieldset legend="Acao Entidade Pagina Atual" >
-                <sb:botaoAcaoEntidadePaginaAtual acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
-                                                 layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
-                                                 registro="#{pgBotaoDeAcaoLab.acaoSelecionada}"
-                                                 />
+
+                <h:form>
+                    <sb:botaoAcaoEntidadePaginaAtual
+                        acao="#{pgBotaoDeAcaoLab.acaoParaBotaoSelecionada}"
+                        idUpdate="@form"
+                        layout="#{pgBotaoDeAcaoLab.tipoDeVisualizacao}"
+                        registro="#{pgBotaoDeAcaoLab.acaoSelecionada}"
+                        />
+                    #{pgBotaoDeAcaoLab.acaoSelecionada}
+
+
+                </h:form>
+
             </p:fieldset>
 
         </ui:define>
