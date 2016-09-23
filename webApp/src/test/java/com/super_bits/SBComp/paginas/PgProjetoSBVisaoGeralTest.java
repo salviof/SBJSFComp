@@ -7,7 +7,7 @@ package com.super_bits.SBComp.paginas;
 
 import com.super_bits.Controller.Interfaces.ItfModuloAcaoSistema;
 import com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema;
-import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
+import com.super_bits.configSBFW.ConfiguradorModelEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
@@ -48,7 +48,7 @@ public class PgProjetoSBVisaoGeralTest extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), true);
+        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), true);
     }
 
 }

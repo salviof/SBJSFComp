@@ -33,7 +33,7 @@ import com.super_bits.modulosSB.SBCore.logeventos.CentralLogEventosArqTextoGener
  *
  * @author desenvolvedor
  */
-public enum FabConfiguracoesDeAmbienteModelEditorComponente {
+public enum ConfiguradorModelEditorComponente {
 
     DESENVOLVIMENTO, HOMOLOGACAO, PRODUCAO;
 

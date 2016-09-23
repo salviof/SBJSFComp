@@ -11,11 +11,12 @@ import com.super_bits.SBComp.paginas.PgComponenteLab;
 import com.super_bits.SBComp.paginas.PgDemoComponente;
 import com.super_bits.SBComp.paginas.PgEditarComponente;
 import com.super_bits.SBComp.paginas.PgHomeSBComp;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.PgTestesCampo;
-import com.super_bits.view.menu.ItfFabricaMenu;
+
 import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
@@ -58,9 +59,7 @@ public class SiteMap extends MB_SiteMapa {
     @Override
     protected Map<String, ItfB_Pagina> buildPaginas() {
         Map<String, ItfB_Pagina> paginasSimples = buildSystemPages();
-
         return paginasSimples;
-
     }
 
     @Override

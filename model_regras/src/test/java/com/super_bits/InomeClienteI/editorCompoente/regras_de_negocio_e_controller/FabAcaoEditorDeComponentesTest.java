@@ -5,11 +5,12 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
+import com.super_bits.configSBFW.ConfiguradorModelEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.GrupoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
+
 import com.super_bits.modulosSB.SBCore.testesFW.TesteAcaoDoSistema;
 import org.junit.Test;
 
@@ -30,7 +31,7 @@ public class FabAcaoEditorDeComponentesTest extends TesteAcaoDoSistema {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), true);
+        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
 
         for (GrupoCampos grp : FabAcaoSeguranca.USUARIO_FRM_EDITAR.getAcaoDoSistema().getComoFormulario().getGruposDeCampos()) {
             System.out.println("GRUPOOOOO " + grp.getNomeGrupo());

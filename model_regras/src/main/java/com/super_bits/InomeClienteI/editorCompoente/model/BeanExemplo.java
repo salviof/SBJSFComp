@@ -141,16 +141,16 @@ public class BeanExemplo
     @NotNull
     private BeanExemplo beanFilho;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, valoresAceitos = {
+    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
+    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
     private BeanExemplo beanSelecionadoDaListaFabrica;
 
-    @InfoCampo(tipo = FabCampos.LOOKUP, caminhoParaLista = "filiaisFornecedor")
+    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private List<BeanExemplo> listasExemplo;

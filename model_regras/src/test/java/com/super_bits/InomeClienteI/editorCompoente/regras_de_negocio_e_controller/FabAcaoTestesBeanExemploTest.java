@@ -5,15 +5,19 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.Controller.UtilFabricaDeAcoesBasico;
+S
 import com.super_bits.InomeClienteI.TestesSBCompSemPersistencia;
-import com.super_bits.modulosSB.SBCore.InfoCampos.UtilSBCoreReflexaoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.UtilFabricaDeAcoesBasico;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCampos;
+
 import org.junit.Test;
 
 /**
  *
  * @author desenvolvedor
  */
+
+
 public class FabAcaoTestesBeanExemploTest extends TestesSBCompSemPersistencia {
 
     public FabAcaoTestesBeanExemploTest() {

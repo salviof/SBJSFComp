@@ -6,7 +6,7 @@
 package com.super_bits.InomeClienteI;
 
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
-import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
+import com.super_bits.configSBFW.ConfiguradorModelEditorComponente;
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.UtilSBCoreReflexaoCampos;
@@ -26,7 +26,7 @@ public class TestesSBCompSemPersistencia extends TesteJunit {
         classesDoSistema.add(BeanExemplo.class);
         classesDoSistema.add(UsuarioSB.class);
         UtilSBCoreReflexaoCampos.configurarTodasAsClasses(classesDoSistema);
-        SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), false);
+        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), false);
     }
 
 }

@@ -3,15 +3,16 @@
  */
 package com.super_bits.SBComp.paginas;
 
-import com.super_bits.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
-import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.InfoAcaoDoSistemaSB;
+
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
-import com.super_bits.modulosSB.SBCore.ManipulaArquivo.UtilSBCoreArquivos;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.UtilSBCoreArquivos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
+
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.tipos.FabVisualizacaoCampo;

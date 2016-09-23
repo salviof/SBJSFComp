@@ -5,7 +5,7 @@
  */
 package com.super_bits.InomeClienteI.InomeProjetoI.configAppp;
 
-import com.super_bits.configSBFW.FabConfiguracoesDeAmbienteModelEditorComponente;
+import com.super_bits.configSBFW.ConfiguradorModelEditorComponente;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.Persistencia.ERROS.TesteJunitSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
@@ -37,8 +37,8 @@ public class TesteProjetoExemplo extends TesteJunitSBPersistencia {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracao());
-        SBPersistencia.configuraJPA(FabConfiguracoesDeAmbienteModelEditorComponente.DESENVOLVIMENTO.getConfiguracaoPersistencia());
+        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao());
+        SBPersistencia.configuraJPA(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracaoPersistencia());
     }
 
     @Test

@@ -10,7 +10,7 @@ import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
-import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import java.lang.reflect.Field;

@@ -7,7 +7,7 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.modulosSB.Persistencia.dao.UtilSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.InfoCampos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.TratamentoDeErros.FabErro;
 import java.lang.reflect.ParameterizedType;
 import javax.persistence.EntityManager;
