@@ -7,6 +7,7 @@ import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller.FabAcaoTestesBeanExemplo;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
+import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.InfoAcaoDemonstracaoSB;
 
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
@@ -38,7 +39,7 @@ import javax.inject.Named;
 @SessionScoped
 @Named
 @InfoPagina(nomeCurto = "DC", tags = {"Demo componentes"})
-@InfoAcaoDoSistemaSB(acao = FabAcaoDemonstracaoSB.DEMONSTRACAO_MB_COMPONENTE)
+@InfoAcaoDemonstracaoSB(acao = FabAcaoDemonstracaoSB.DEMONSTRACAO_MB_COMPONENTE)
 public class PgDemoComponente extends MB_PaginaConversation {
 
     private final BeanExemplo beanExemplo;

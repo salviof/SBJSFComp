@@ -6,8 +6,8 @@
 package com.super_bits.SBComp.paginas;
 
 import com.super_bits.config.webPaginas.ConfigWPInomeProjetoI;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.GrupoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import com.super_bits.testes.TestesSBCompSemPersistencia;
 import org.junit.Test;

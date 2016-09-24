@@ -17,7 +17,8 @@ public class TestesSBCompSemPersistencia extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao(), false);
+        SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.HOMOLOGACAO);
+
     }
 
 }

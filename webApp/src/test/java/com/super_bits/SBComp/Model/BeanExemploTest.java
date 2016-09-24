@@ -8,11 +8,11 @@ package com.super_bits.SBComp.Model;
 import com.super_bits.InomeClienteI.editorCompoente.model.BeanExemplo;
 import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.FabCampos;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.ItfCampoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
-import com.super_bits.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,15 +86,16 @@ public class BeanExemploTest extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
+        SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.HOMOLOGACAO);
+
     }
 
     @Test
     public void testeVisaoXHTML() {
 
         BeanExemplo teste = new BeanExemplo();
-        System.out.println(FabCampos.LOOKUP.getTipo_input_prime());
-        System.out.println(FabCampos.LOOKUP.getTipo_input_prime().getComponente().getXhtmlJSF());
+        System.out.println(FabCampos.OBJETO_DE_UMA_LISTA.getTipo_input_prime());
+        System.out.println(FabCampos.OBJETO_DE_UMA_LISTA.getTipo_input_prime().getComponente().getXhtmlJSF());
         for (ItfCampoInstanciado cpInstanciado : teste.getTodosCamposInstanciados()) {
             System.out.println(cpInstanciado.getNome());
             System.out.println(cpInstanciado.getTipoCampo());

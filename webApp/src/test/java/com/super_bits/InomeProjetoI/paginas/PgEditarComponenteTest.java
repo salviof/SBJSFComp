@@ -6,9 +6,10 @@
 package com.super_bits.InomeProjetoI.paginas;
 
 import com.super_bits.SBComp.paginas.PgEditarComponente;
+import com.super_bits.config.webPaginas.ConfigWPInomeProjetoI;
 import com.super_bits.config.webPaginas.FabConfiguracoesDeAmbienteWebExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import org.junit.Test;
@@ -36,8 +37,8 @@ public class PgEditarComponenteTest extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
-        SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebExemplo.HOMOLOGACAO.getConfiguracaoWebPaginas());
+        SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.HOMOLOGACAO);
+        SBWebPaginas.configurar(new ConfigWPInomeProjetoI());
 
     }
 

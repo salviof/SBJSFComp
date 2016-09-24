@@ -37,7 +37,7 @@ public class TesteProjetoExemplo extends TesteJunitSBPersistencia {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao());
+        SBCore.configurar(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracao(), SBCore.getEstadoAPP());
         SBPersistencia.configuraJPA(ConfiguradorModelEditorComponente.DESENVOLVIMENTO.getConfiguracaoPersistencia());
     }
 

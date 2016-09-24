@@ -17,7 +17,7 @@ public class TesteConformidadeGeral extends RelatorioTesteWebPaginas {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
+        SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.DESENVOLVIMENTO);
 
     }
 

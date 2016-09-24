@@ -30,8 +30,8 @@ public class SiteMapTest extends TesteJunit {
     public void testGetFabricaMenu() {
 
         try {
-            SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
-            SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebExemplo.HOMOLOGACAO.getConfiguracaoWebPaginas());
+            SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.HOMOLOGACAO);
+            SBWebPaginas.configurar(new ConfigWPInomeProjetoI());
             SiteMap mapa = new SiteMap();
 
             ItfB_Pagina pagina = mapa.getPaginaNoContexto("/site/home.xhtml");
@@ -60,8 +60,8 @@ public class SiteMapTest extends TesteJunit {
 
     @Override
     protected void configAmbienteDesevolvimento() {
-        SBCore.configurar(FabConfiguracoesDeAmbienteWebExemplo.DESENVOLVIMENTO.getConfiguracao());
-        SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebExemplo.HOMOLOGACAO.getConfiguracaoWebPaginas());
+        SBCore.configurar(new FabConfiguracoesDeAmbienteWebExemplo(true), SBCore.ESTADO_APP.HOMOLOGACAO);
+        SBWebPaginas.configurar(new ConfigWPInomeProjetoI());
     }
 
 }

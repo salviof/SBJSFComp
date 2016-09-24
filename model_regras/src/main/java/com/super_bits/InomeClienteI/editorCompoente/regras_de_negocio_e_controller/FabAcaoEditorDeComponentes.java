@@ -5,12 +5,12 @@
  */
 package com.super_bits.InomeClienteI.editorCompoente.regras_de_negocio_e_controller;
 
-import com.super_bits.Controller.anotacoes.InfoTipoAcaoFormulario;
-import com.super_bits.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
-import com.super_bits.modulosSB.SBCore.fabrica.ItfFabricaAcoes;
-import com.super_bits.view.fabricasCompVisual.ComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 
 /**
  *

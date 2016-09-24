@@ -17,14 +17,17 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoD
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfigCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ControleDeSessaoPadrao;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguradorCore;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.Mensagens.CentramMensagemProgramadorMsgStop;
-import com.super_bits.modulosSB.SBCore.TratamentoDeErros.ErroSBCoreDeveloperSopMessagem;
-import com.super_bits.modulosSB.SBCore.logeventos.CentralLogEventosArqTextoGenerica;
+import com.super_bits.modulosSB.SBCore.modulos.Mensagens.CentramMensagemProgramadorMsgStop;
+import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.ErroSBCoreDeveloperSopMessagem;
+import com.super_bits.modulosSB.SBCore.modulos.logeventos.CentralLogEventosArqTextoGenerica;
+import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfConfigWebPagina;
-import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcoesPaginasDoSistema;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
 import com.super_bits.modulosSB.webPaginas.util.CentralDeMensagensJSFAPP;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -42,52 +45,14 @@ import com.super_bits.modulosSB.webPaginas.util.CentralDeMensagensJSFAPP;
  *
  * @author desenvolvedor
  */
-public enum FabConfiguracoesDeAmbienteWebExemplo {
+public class FabConfiguracoesDeAmbienteWebExemplo extends ConfiguradorCoreDeProjetoWebWarAbstrato {
 
-    DESENVOLVIMENTO, HOMOLOGACAO, PRODUCAO;
+    public FabConfiguracoesDeAmbienteWebExemplo(boolean modoDesenvolvimento) {
+        super(modoDesenvolvimento);
+    }
 
-    public ItfConfiguradorCore getConfiguracao() {
-        ConfigCoreCustomizavel cfg = new ConfigCoreCustomizavel();
-        cfg.setCliente("Faculdade_Java");
-        cfg.setGrupoProjeto("SBJSFComp");
-        cfg.setNomeProjeto("webApp");
-        cfg.setDiretorioBase("");
-        cfg.setCentralDeEventos(CentralLogEventosArqTextoGenerica.class);
-        cfg.setCentralMEnsagens(CentralDeMensagensJSFAPP.class);
-        cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
-        cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
-        cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class,
-            FabAcaoAcessoRestritoExemplo.class,
-            FabAcaoTestesBeanExemplo.class,
-            FabAcaoEditorDeComponentes.class,
-            FabAcaoDemonstracaoSB.class,
-            FabAcaoProjetoSB.class,
-            FabAcaoTestesBotaoDeAcao.class,
-            FabAcoesPaginasDoSistema.class,
-            FabAcaoDemonstracaoSB.class
-        });
-        cfg.setClasseConfigPermissao(ConfigAcessos.class);
-
-        switch (this) {
-            case DESENVOLVIMENTO:
-                cfg.setEstadoAPP(SBCore.ESTADO_APP.DESENVOLVIMENTO);
-                cfg.setCentralMEnsagens(CentramMensagemProgramadorMsgStop.class);
-                cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
-                cfg.setCentralMEnsagens(CentramMensagemProgramadorMsgStop.class);
-                break;
-            case HOMOLOGACAO:
-                cfg.setEstadoAPP(SBCore.ESTADO_APP.HOMOLOGACAO);
-
-                break;
-            case PRODUCAO:
-                cfg.setEstadoAPP(SBCore.ESTADO_APP.PRODUCAO);
-                break;
-            default:
-                throw new AssertionError(this.name());
-
-        }
-        return cfg;
-
+    public FabConfiguracoesDeAmbienteWebExemplo(ServletContext contexto) {
+        super(contexto);
     }
 
     public ItfConfigSBPersistencia getConfiguracaoPersistencia() {
@@ -96,6 +61,21 @@ public enum FabConfiguracoesDeAmbienteWebExemplo {
 
     public ItfConfigWebPagina getConfiguracaoWebPaginas() {
         return new ConfigWPInomeProjetoI();
+    }
+
+    @Override
+    public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
+        pConfig.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class,
+            FabAcaoAcessoRestritoExemplo.class,
+            FabAcaoTestesBeanExemplo.class,
+            FabAcaoEditorDeComponentes.class,
+            FabAcaoDemonstracaoSB.class,
+            FabAcaoProjetoSB.class,
+            FabAcaoTestesBotaoDeAcao.class,
+            FabAcaoPaginasDoSistema.class,
+            FabAcaoDemonstracaoSB.class
+        });
+        pConfig.setClasseConfigPermissao(ConfigAcessos.class);
     }
 
 }

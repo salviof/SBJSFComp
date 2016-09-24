@@ -7,8 +7,8 @@ package com.super_bits.SBComp.paginas;
 
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
-import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcoesPaginasDoSistema;
-import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.InfoAcoesPaginaDoSistema;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.InfoAcaoPaginaDoSistema;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -16,7 +16,7 @@ import javax.inject.Named;
  *
  * @author desenvolvedor
  */
-@InfoAcoesPaginaDoSistema(acao = FabAcoesPaginasDoSistema.PAGINA_MB_HOME)
+@InfoAcaoPaginaDoSistema(acao = FabAcaoPaginasDoSistema.PAGINA_MB_HOME)
 @Named
 @InfoPagina(tags = "Pagina inicial criação de componentes", nomeCurto = "PGINI")
 @ViewScoped
